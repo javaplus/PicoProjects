@@ -1,3 +1,9 @@
+## This code started from what I took from this article:https://www.codrey.com/raspberry-pi/raspberry-pi-pico-sweeping-servo/
+## Then I took the generic function and broke it into two more discernable functions to see what they were doing.
+## Still haven't connected all the dots in my head around the math yet, but it works great and is more robust it seems
+## than solutions that just say use a duty cycle between 1000 and 9000.
+
+
 ## according to this: https://microcontrollerslab.com/servo-motor-raspberry-pi-pico-micropython/
 ## The duty cycle maxes at 65535 for the
 ## Raspberry Pi Pico has 12 bit resolution but in MicroPython it is scaled to 16 bits.
