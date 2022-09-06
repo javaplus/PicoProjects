@@ -25,7 +25,7 @@ def _calc_pulse_width(angle):
 
 
 def duty_cycle_for_angle(angle):
-    print("===== New Write ==== ")
+    print("===== Calcing Duty Cycle for Angle ==== ")
     print("angle=" + str(angle))
     # pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
     pulse_width=_calc_pulse_width(angle)
