@@ -2,7 +2,15 @@
 ## Then I took the generic function and broke it into two more discernable functions to see what they were doing.
 ## Still haven't connected all the dots in my head around the math yet, but it works great and is more robust it seems
 ## than solutions that just say use a duty cycle between 1000 and 9000.
+import machine
 
+# Default to Pin 15
+servo = machine.PWM(machine.Pin(15))
+servo.freq(50)
+
+def servo_pin(pin):
+    servo = machine.PWM(machine.Pin(pin))
+    servo.freq(50)
 
 ## according to this: https://microcontrollerslab.com/servo-motor-raspberry-pi-pico-micropython/
 ## The duty cycle maxes at 65535 for the
@@ -36,4 +44,8 @@ def duty_cycle_for_angle(angle):
     
     return duty
 
+def move(angle):
+    duty_cycle=duty_cycle_for_angle(angle)
+    servo.duty_u16(duty_cycle)
 
+   
