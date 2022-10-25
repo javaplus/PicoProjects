@@ -1,44 +1,19 @@
-import machine
-import utime
 import sg90
+import utime
 
-servo = machine.PWM(machine.Pin(1))
-servo.freq(50)
+sg90.servo_pin(15)
 
-
-
-def move_servo_to_angle(pin,angle):
-
-    duty = sg90.duty_cycle_for_angle(angle)
-    pin.duty_u16(duty)
-
-
-move_servo_to_angle(servo, 90)
+#Center
+sg90.move_to(90)
 utime.sleep_ms(1000)
 
-move_servo_to_angle(servo, 45)
+#move_to to one extreme
+sg90.move_to(0)
 utime.sleep_ms(1000)
 
-move_servo_to_angle(servo, 0)
+#move_to to other extreme
+sg90.move_to(180)
 utime.sleep_ms(1000)
 
-move_servo_to_angle(servo, 45)
-utime.sleep_ms(1000)
-
-move_servo_to_angle(servo, 90)
-utime.sleep_ms(1000)
-
-move_servo_to_angle(servo, 130)
-utime.sleep_ms(1000)
-
-move_servo_to_angle(servo, 180)
-utime.sleep_ms(1000)
-
-move_servo_to_angle(servo, 130)
-utime.sleep_ms(1000)
-
-move_servo_to_angle(servo, 90)
-utime.sleep_ms(1000)
-
-
-
+#Center
+sg90.move_to(90)
