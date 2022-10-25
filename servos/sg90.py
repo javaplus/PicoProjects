@@ -44,8 +44,8 @@ def duty_cycle_for_angle(angle):
     
     return duty
 
-def move(angle):
+def move_to(angle):
     duty_cycle=duty_cycle_for_angle(angle)
     servo.duty_u16(duty_cycle)
 
-   
+    
