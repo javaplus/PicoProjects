@@ -8,7 +8,7 @@ Projects/Sample code for Raspberry Pi Pico
 Simple circuit with LED using power from Pico and turn on LED. 
 - Use 3.3v from Pico and Blue LED to support Voltage.
 
-## Resitors.
+## Resistors.
 
 Same simple circuit from above and just add resistors to control the brightness of the LED.
 
