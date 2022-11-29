@@ -20,3 +20,5 @@ Replace resistor with photo resistor and see LED dim and brighten based on light
 
 Go back to normal resistor and then add a button in the circuit so that the LED only comes on when the button is pressed.
 
+## 
+
