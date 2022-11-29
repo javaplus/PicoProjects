@@ -25,6 +25,14 @@ Replace Photo resistor with Potentiometer to control brightness of LED
 
 Go back to normal resistor and then add a button in the circuit so that the LED only comes on when the button is pressed.
 
-## 
+## Control LED from Pico
+
+Remove button and wire LED to Pico and ground.  Then write code to blink LED. Maybe blink on board LED first.
+- Stretch goal: having more than one LED.
+
+## Read input (button input)
+
+Hook the button up to the Pico and code it so that the light comes on only when the button is pressed, but have the code detect when the button is pressed and control when the LED comes on.
+- stretch goal: make it so that the LED comes on with one press of the button and stays on and then turns off with a second press of the button.
 
 
