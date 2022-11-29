@@ -34,5 +34,24 @@ Remove button and wire LED to Pico and ground.  Then write code to blink LED. Ma
 
 Hook the button up to the Pico and code it so that the light comes on only when the button is pressed, but have the code detect when the button is pressed and control when the LED comes on.
 - stretch goal: make it so that the LED comes on with one press of the button and stays on and then turns off with a second press of the button.
+- stretch goal: hook up buzzer and have it buzz when button is pressed or create game to have button pressed within a short time after the light goes on.
 
+
+## PWM with LED
+
+Explain PWM and use PWM to fade an LED in and out and control brightness.
+
+## PWM with Servo
+
+Use PWM to control a servo.  Explain how PWM is the signal/code to control where a servo should move to.  Use SG90 library to control servo.  Maybe dig into the SG90 library a little more to explain PWM.
+- Stretch Goal: sentry program that requires starting at 90 and then slowly panning to the right then panning back to center(90) before panning left again.
+
+
+## Referenes:
+  May need references for Python on how to do various things:
+  - While loops
+  - for loops
+  - if statements
+  - time calculations/deltas
+  - etc...
 
