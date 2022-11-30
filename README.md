@@ -4,6 +4,8 @@ Projects/Sample code for Raspberry Pi Pico
 
 We start with a basic introduction to circuits and some basic electronics.  Without this foundational knowledge, it will be difficult to build useful solutions that integrate code and electronics.
 
+[Lab 1](/labs/first_circuit.md)
+
 ## Intro to Circuits.
 
 Simple circuit with LED using power from Pico and turn on LED. 
