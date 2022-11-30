@@ -47,11 +47,13 @@ Use PWM to control a servo.  Explain how PWM is the signal/code to control where
 - Stretch Goal: sentry program that requires starting at 90 and then slowly panning to the right then panning back to center(90) before panning left again.
 
 
+
 ## Referenes:
   May need references for Python on how to do various things:
-  - While loops
-  - for loops
-  - if statements
-  - time calculations/deltas
+  - [While loops](https://www.geeksforgeeks.org/python-while-loop/)
+  - [for loops](https://www.geeksforgeeks.org/python-for-loops/)
+  - [if statements](https://www.geeksforgeeks.org/python3-if-if-else-nested-if-if-elif-statements/)
+  - [time calculations/deltas](https://docs.micropython.org/en/latest/library/time.html#time.ticks_diff)
   - etc...
 
+## 
