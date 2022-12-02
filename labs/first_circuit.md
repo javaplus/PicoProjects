@@ -17,6 +17,13 @@ NOTE: Technically the color of wires don't matter (internally they are the same)
 
 So, we will simply hook our power source to our bread board and then connect the power to the LED in the appropriate way.  See the Diagram below.
 
+## LED Selection
+
+We wil be connecting the 3.3Volts out pin from the Pico to the + power rail of the bread board.  Since we are using 3.3 Volts of power be sure to chose an LED with the highest voltage rating.  See the table below for your LED voltage ratings.  Notice that the WHITE, BLUE, and GREEN LEDS support upto 3.2Volts. The other LEDs (RED and YELLOW) only support upto 2.2Volts.  So, you need to use a WHITE, BLUE, or GREEN led for this exercise, otherwise you can burn out the LED.
+
+##### LED Specification Table
+![LED Specs](/images/LED_SPECS.PNG)
+
 ## Wiring Diagram
 
 ![Basic LED Wiring Diagram](/images/1_Circuit_bb.png)
