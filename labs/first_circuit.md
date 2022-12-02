@@ -41,7 +41,7 @@ Now to connect the positive side of the power rail, run a red wire from Pin 5 Ro
 
 ##### LED
 
-Now take your BLUE LED and connect it to the breadboard plugging the slightly longer leg into Pin 30 and the shorter leg into Pin 31 (preferably in Row F)
+Now take your **BLUE** LED and connect it to the breadboard plugging the slightly longer leg into Pin 30 and the shorter leg into Pin 31 (preferably in Row F)
 
 Now run a red wire from Pin 30 (any Row G-J) to the positive power rail at the top.  Now connect the shorter leg of the LED to ground, by running a black wire from Pin 31 (any Row G-J) to the top Ground(negative) rail.
 
