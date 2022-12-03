@@ -37,5 +37,6 @@ So, remove the red wire connecting the positve rail to Pin 30 (long side of the 
 Once you connect the resistor, you should see the LED light up again, but be dimmer.  
 Swap out the resistor with another one in your kit and see if it gets even dimmer or brighter.  Can you tell by the brightness level which resistor has the most resistance(more Ohms)?
 
+If it works pat yourself on the back.
 
 ![Resistor Circuit](/images/2_Circuit_bb.png)

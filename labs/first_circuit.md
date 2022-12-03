@@ -50,6 +50,8 @@ Once everything is wired, if you plug in your Pico via the USB cable, you should
 
 When you have light, rejoice! You've just made the world a little brighter literally! :)
 
+If it works do a slow nod of satisfaction.
+
 
 #### Follow Up and Troubleshooting:
 
