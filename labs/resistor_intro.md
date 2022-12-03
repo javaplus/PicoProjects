@@ -21,6 +21,8 @@ Since we are barely over spec with our Blue LED we most likely won't have an iss
 
  Resistance is measured in Ohms.  The higher the Ohms the more resistance.  You should have at least 2 resistors in your kit.  We will try them both to determine which has the most resistance.
 
+ Resistors as seen in the image below have two legs. These legs are not polarized... meaning it doesn't matter which leg plugs into what part of the circuit.  as long as the legs are used to complete a circuite the body in the middle will resist the flow of electron flow.
+
 ###### Resistor
 ![Resistor image](/images/resistor.png)
 
