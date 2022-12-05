@@ -28,7 +28,7 @@ The idea is that if you connect power to one side of the button and then the oth
 
 For this lab, we will replace the potentiometer with a button.  You will no longer have resistance so your light will be super bright, but only while you press the button down.  
 
-Remove the black ground wire that was connecting to your potentiometer and the ground/negative rail and remove the Potentiometer altogether.
+Remove the black ground wire that was connecting your potentiometer to the ground/negative rail and remove the Potentiometer altogether.
 
 Take your button and place the two right side pins into column 25.  To determine left and right of the button hold the slot on the bottom side of the button vertically. 
 ##### Bottom view of button
