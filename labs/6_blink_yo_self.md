@@ -6,19 +6,42 @@ We've finally made it to our first lab with actually using the Pico as a microco
 
 ## Raspberry Pi Pico H
 
-We are using the w1
+We are using the Raspberry Pi Pico H which is part of the Pi Foundations new Microcontroller family of boards... You can read more about them here.
+
+[Official Pico Page](https://www.raspberrypi.com/products/raspberry-pi-pico/)
 
  ## What to do
 
-For this lab, we will replace the photoresistor in our circuit with our potentiometer.  So remove the photoresistor that connects the long side of the LED currently in column 30 to the power rail. 
+To start you don't need anything but the pico for this lab.  So, feel free to strip everything else off except the Pico. I would leave the wires connecting the Pico to the power rails although technically they are not needed for this lab.
 
-Add the potentiometer to the breadboard making sure the side with the slots are near the middle section of the breadboard.  Make sure the 3 pins of the potentiometer are in different columns.  The far right pin when looking at the slots should go into the breadboard at Row G and column 25. This should position the middle pin into the breadboard at Row F and column 24.
+![Blink Diagram](/images/6_blink_bb.png)
 
-With the potentiometer in place, connect the far left pin to our power rail. So, that should mean connecting a wire from the positive power rail to Column 23.  
-Now connect the middle pin of the potentiometer which is in column 24 to the long leg of the LED in column 30.  Now connect the last pin (far right pin) of the potentiometer to ground.  That is run a wire from Column 25 to the ground(negative) rail.
+With the breadboard cleared, and the Pico still connected to your USB port, open Thonny and in the bottom right hand corner choose the interpreter for Thonny to use.  If your computer recognized the Pico, you can choose the item that says "**MicroPython(Raspberry Pi Pico)** in the list. (see image below)
 
-If everything is connected properly you should be able to twist the knob ontop of the potentiometer and see the LED dim and brighten.  
+![Thonny Select Pico](/images/thonny_pico.PNG)
 
-If it works high five someone nearby.
+If having issues connecting see if this detailed guide helps: 
+[Detailed guide for connecting Pico to Thonny](https://microcontrollerslab.com/getting-started-raspberry-pi-pico-thonny-ide/)
 
-![Resistor Circuit](/images/4_Circuit_bb.png)
+
+It it's able to connect, you should see the print out in the shell like in the picture above that tells you the version of MicroPython running on the Pico.
+The shell below is a [REPL](https://pythonprogramminglanguage.com/repl/) where you could type Python statements have them executed immeditately.  We are not going to use the shell.  Instead, we will type our code into the text editor area above the shell.
+
+Here is the obligatory blink demo for the Pico:
+
+``` Python
+from machine import Pin
+import utime
+
+led = Pin(25, Pin.OUT)
+
+while True:
+    led.toggle()
+    utime.sleep_ms(1000)
+```
+Enter the code above into the Thonny editor and then click the Play button.
+If everything works, you should see the onboard LED flash green about once a second.
+
+If it works, eat a snack or better yet, give your instructor one!
+
+If the instructor didn't explain each line of the code or it doesn't make sense, throw something at him/her and make them explain it!
