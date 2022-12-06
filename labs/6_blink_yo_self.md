@@ -42,6 +42,8 @@ while True:
 Enter the code above into the Thonny editor and then click the Play button.
 If everything works, you should see the onboard LED flash green about once a second.
 
+**NOTE** You can save this code to your Pico, by clicking the SAVE button in Thonny and then choosing to save it on the Pico.  Give it a file name and a ".py" extension.  If Thonny complains about the Pico or device being busy, click the red stop button to exit running the current program and then click save. The STOP button resets the connection with the Pico.
+
 If it works, eat a snack or better yet, give your instructor one!
 
 If the instructor didn't explain each line of the code or it doesn't make sense, throw something at him/her and make them explain it!
