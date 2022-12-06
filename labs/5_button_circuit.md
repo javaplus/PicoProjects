@@ -30,7 +30,8 @@ For this lab, we will replace the potentiometer with a button.  You will no long
 
 Remove the black ground wire that was connecting your potentiometer to the ground/negative rail and remove the Potentiometer altogether.
 
-Take your button and place the two right side pins into column 25.  To determine left and right of the button hold the slot on the bottom side of the button vertically. 
+Take your button and place the two right side pins into column 25.  To determine left and right of the button hold the slot on the bottom side of the button vertically.  To get the button to stick good into the breadboard, you may need to spread the pins out a little so that when they go into the breadboard there are two rows of pins in between the metal pins of the button.
+
 ##### Bottom view of button
 ![Button Slot](/images/button_bottom.jpg)
 
