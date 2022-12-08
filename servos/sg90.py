@@ -9,6 +9,7 @@ servo = machine.PWM(machine.Pin(15))
 servo.freq(50)
 
 def servo_pin(pin):
+    global servo
     servo = machine.PWM(machine.Pin(pin))
     servo.freq(50)
 
