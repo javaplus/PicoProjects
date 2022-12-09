@@ -108,3 +108,60 @@ while True:
 After adding your debounce logic, you should be able to run it and see that pressing and releasing the button now consistently toggles the LED off and on.
 
 If this works, give someone nearby a high five!
+
+### Clean Code
+
+**NOTE** Our code is getting a little messy so it would be nice to move some logic into functions.  Feel free to refactor and clean it up yourself or copy our example.
+
+```Python
+from machine import Pin
+import utime
+
+led = Pin(16, Pin.OUT)
+button = Pin(17, Pin.IN, Pin.PULL_DOWN)
+
+led.value(0) # init led to off
+# Flag for if LED is on or off
+led_on = False
+
+
+# debounce utime saying 500ms between button presses
+DEBOUNCE_utime = 500
+# debounce counter is our counter from the last button press
+# initialize to current utime
+debounce_counter = utime.ticks_ms()
+
+# Function to handle turning LED off and on and setting flag
+def toggle_led():
+    global led_on
+    if(led_on):
+        led.value(0)
+        led_on = False
+    else:
+        led.value(1)
+        led_on = True
+
+# Function to handle when the button is pressed
+def button_press_detected():
+    global debounce_counter
+    current_utime = utime.ticks_ms()
+    # Calculate utime passed since last button press
+    utime_passed = utime.ticks_diff(current_utime,debounce_counter)
+    print("utime passed=" + str(utime_passed))
+    if (utime_passed > DEBOUNCE_utime):
+        print("Button Pressed!")
+        # set debounce_counter to current utime
+        debounce_counter = utime.ticks_ms()
+        toggle_led()
+    
+    else:
+        print("Not enough utime")
+
+
+while True:
+    if button.value()==True:
+        button_press_detected()
+
+```
+
+After making the above changes, test you code again to make sure it still works.  Having easy to understand code as well as single purpose functions is key to being able to continue to add features quickly and maintian and debug your code.
