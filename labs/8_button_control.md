@@ -23,7 +23,6 @@ Here's the code:
 
 ``` Python
 from machine import Pin
-import utime
 
 led = Pin(16, Pin.OUT)
 button = Pin(17, Pin.IN, Pin.PULL_DOWN)
@@ -35,8 +34,7 @@ while True:
     else:
         led.value(0)
         
-    utime.sleep_ms(300)
-
+    
 ```
 Enter the code above into the Thonny editor and then click the Play button.
 If everything works, you should see the LED come on when you push and hold down the button.
@@ -74,7 +72,7 @@ while True:
     else:
         led.value(0)
         
-    utime.sleep_ms(300)
+    
 ```
 
 </details>

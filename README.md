@@ -72,4 +72,8 @@ Use PWM to control a servo.  Explain how PWM is the signal/code to control where
   - [time calculations/deltas](https://docs.micropython.org/en/latest/library/time.html#time.ticks_diff)
   - etc...
 
+### Pico:
+
+[MicroPython RP Pico Library](https://docs.micropython.org/en/latest/rp2/quickref.html)
+
 ## 
