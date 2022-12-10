@@ -126,5 +126,12 @@ If it works, interrupt someone else by shouting "It's working!  It's working!"
 ## References
 
 If you'd like to read more about the **irq()** function or other **Pin** functions here's the link to the official docs:  
-[Pin Documentation](https://docs.micropython.org/en/latest/library/machine.Pin.html)
+- [Pin Documentation](https://docs.micropython.org/en/latest/library/machine.Pin.html)
 
+- [Polling vs Interrupts](https://electrocredible.com/raspberry-pi-pico-external-interrupts-button-micropython/)
+
+- [(Video)Simple Interrupt with Pico](https://www.youtube.com/watch?v=Qw2xr5a2rSA)
+
+- [(Video)Threading with the Pico](https://www.youtube.com/watch?v=QeDnjcdGrpY)
+
+- [(Video) How To Use Multiple Cores and Interrupts](https://www.youtube.com/watch?v=9vvobRfFOwk&t=574s)
