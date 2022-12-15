@@ -39,6 +39,13 @@ while True:
     led.toggle()
     utime.sleep_ms(1000)
 ```
+**NOTE**<details><summary> Click here for how to make this work with Pico W.</summary> 
+If using the Pico W the internal pin for the LED is NOT 25.  It's the string "LED". So, assuming you flashed your Pico W with the right MicroPython library(the one for the Pico W), then the led line above would look like this for the Pico W:
+```Python
+led = Pin("LED", Pin.OUT)
+```
+</details>
+
 Enter the code above into the Thonny editor and then click the Play button.
 If everything works, you should see the onboard LED flash green about once a second.
 
