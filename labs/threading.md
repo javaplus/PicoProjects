@@ -104,7 +104,6 @@ def scan():
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(180,89, -1):
-        print(i)
         sg90.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
@@ -114,7 +113,6 @@ def scan():
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(0,91):
-        print(i)
         sg90.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
@@ -140,6 +138,91 @@ Then we use the `_thread` library's [start_new_thread()](https://docs.python.org
 Try running your new code and if you did everything right, then you should see the servo moving and the LED fading in and out at the same time.
 
 If you got this to work, pat your head and rub your tummy at the same time!
+
+
+## Sharing Data Between Threads
+
+What if I need to pass information from one Thread to another.  Well in the full blown Python ecosystem, you'd have access the [queue](module) which is a great way of asynchronously and safely passing data between threads.  However, as of this time, this does not exist in MicroPython. So, to share data in MicroPython between running threads, I've only been able to succeed with [global variables](https://www.freecodecamp.org/news/python-global-variables-examples/). Probably not the best solution, but I can't find a better way within MicroPython.
+
+So, we are going to modify the code above now to have the main thread calculate how fast the servo's should be scanning, but increasing the speed(actually the step) the servo uses to rotate.  
+I've added a function called `set_servo_speed()` which retuns the value the servo should step at... it starts at 1 and every 5 seconds it increases it by 1.
+
+Here's the whole code:
+```Python
+from machine import Pin,PWM
+import utime
+import sg90
+import _thread
+
+
+# Initialize LED
+led = PWM(Pin(16))
+led.freq(500)
+
+# Initiliaze Servo
+sg90.servo_pin(15)
+SMOOTH_TIME = 20
+servo_speed = 1
+
+def fade_led():
+    for duty in range(0,65535,1):
+        led.duty_u16(duty) # 65535 is max
+    for duty in range(65535,0,-1):
+        led.duty_u16(duty) # 65535 is max
+        
+def scan():
+    stepping = servo_speed
+    for i in range(90,180, stepping):
+        sg90.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+
+    for i in range(180,89, -stepping):
+        sg90.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+
+
+    for i in range(90,-1,-stepping):
+        sg90.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+
+    for i in range(0,91, stepping):
+        sg90.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+        
+
+# define a function to execute in the second thread
+def second_thread_func():
+    while True:
+        scan()
+        print("servo_speed=", servo_speed)
+        utime.sleep_ms(2000)
+# Start the second thread
+_thread.start_new_thread(second_thread_func,())
+
+# every 5 second increase servo speed
+last_time_checked = utime.ticks_ms()
+def set_servo_speed():
+    global last_time_checked
+    diff_time = utime.ticks_diff(utime.ticks_ms(), last_time_checked)
+    if(diff_time > 5000):
+        last_time_checked = utime.ticks_ms()
+        return (servo_speed + 1)
+    else:
+        return servo_speed
+    
+# Below executes in the main(first) thread.
+while True:
+    fade_led()
+    servo_speed = set_servo_speed()
+
+```
+
+Notice now the `scan()` function uses the global variable called `servo_speed` to set it's `stepping` variable which controls how fast the servo rotates back.
+
+Run the code above and you should see the servo increase in movement speed every 5 seconds.  
+
+Now this is a trivial example, but if you needed to control how fast that servo is using some input in the main thread, this is the way you could do that.
+**Hint** This will be useful in the final game!
 
 ## References:
 
