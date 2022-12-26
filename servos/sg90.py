@@ -4,6 +4,8 @@
 ## than solutions that just say use a duty cycle between 1000 and 9000.
 import machine
 
+DEBUG = False
+
 # Default to Pin 15
 servo = machine.PWM(machine.Pin(15))
 servo.freq(50)
@@ -34,14 +36,16 @@ def _calc_pulse_width(angle):
 
 
 def duty_cycle_for_angle(angle):
-    print("===== Calcing Duty Cycle for Angle ==== ")
-    print("angle=" + str(angle))
+    if DEBUG:
+        print("===== Calcing Duty Cycle for Angle ==== ")
+        print("angle=" + str(angle))
     # pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
     pulse_width=_calc_pulse_width(angle)
     #duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
     duty=int(_calc_duty_cycle(pulse_width))
-    print("pulse width=" + str(pulse_width))
-    print("duty=" + str(duty))
+    if DEBUG:
+        print("pulse width=" + str(pulse_width))
+        print("duty=" + str(duty))
     
     return duty
 
