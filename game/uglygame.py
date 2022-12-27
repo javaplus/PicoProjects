@@ -1,8 +1,7 @@
 from machine import Pin,PWM
 import utime
-import sg90
 import _thread
-
+import sg90
 
 button = Pin(17, Pin.IN, Pin.PULL_DOWN) # potential TODO - change PIN of button
 # debounce utime saying wait 3 seconds between button presses
@@ -77,32 +76,36 @@ def button_press_detected():
      #   print("Not enough utime")
 
        
-def scan():
+def scan(servo):
     stepping = servo_speed
     for i in range(90,130, stepping):
-        sg90.move_to(i)
+        servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(130,89, -stepping):
-        sg90.move_to(i)
+        servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 
     for i in range(90,45,-stepping):
-        sg90.move_to(i)
+        servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(45,91, stepping):
-        sg90.move_to(i)
+        servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
         
 
 # define a function to execute in the second thread
 def second_thread_func():
     while True:
-        scan()
+        # fix for import failing in second thread when it's inside a function
+        servo = sg90
+        stepping = servo_speed
+        scan(servo)
         print("servo_speed=", servo_speed)
         utime.sleep_ms(100)
+
 # Start the second thread
 _thread.start_new_thread(second_thread_func,())
 
@@ -151,7 +154,10 @@ try:
         else:
             print("YOu dead")
 except Exception as e:
+    ## TODO Handle exception
     print("Exception",e)
 except KeyboardInterrupt as ki:
+    ## TODO Handle exception (kill second thread)
     print("keyboard Interrupt", ki)
+
 
