@@ -150,3 +150,4 @@ If you got this to work, scan the room for someone cool, when found go to them a
 
 [Servo Explained](https://www.sparkfun.com/servos)
 [SG90 Specs](https://servodatabase.com/servo/towerpro/sg90)
+[Pico PWM Primer](https://www.codrey.com/raspberry-pi/raspberry-pi-pico-pwm-primer/)
