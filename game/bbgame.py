@@ -4,7 +4,7 @@ import utime, sg90, _thread, tm1637, sys
 
 photoresistor_value = machine.ADC(28)
 
-initial_photo_reading = photoresistor_value.read_u16()  
+initial_photo_reading = photoresistor_value.read_u16()
 print("Initial Laser Voltage Reading: ", initial_photo_reading)
 
 # target will recognize a hit when there is a 20% increase in light
@@ -13,24 +13,24 @@ print("Target Goal Lighting: ", target_reading)
 
 # Initialize LEDs to on at beginning
 # These LEDs indicate lives remaining
-led1 = Pin(16, Pin.OUT)  
+led1 = Pin(16, Pin.OUT)
 led1.value(1)
 led1_on = True
-led2 = Pin(18, Pin.OUT) 
+led2 = Pin(18, Pin.OUT)
 led2.value(1)
 led2_on = True
-led3 = Pin(19, Pin.OUT) 
+led3 = Pin(19, Pin.OUT)
 led3.value(1)
 led3_on = True
 lives_left = True
 
-laser = Pin(20, Pin.OUT) 
+laser = Pin(20, Pin.OUT)
 laser.value(0)
 
-button = Pin(17, Pin.IN, Pin.PULL_DOWN) 
+button = Pin(17, Pin.IN, Pin.PULL_DOWN)
 
 # Initialize Score and Display
-display = tm1637.TM1637(clk=Pin(1), dio=Pin(0))  
+display = tm1637.TM1637(clk=Pin(1), dio=Pin(0))
 score = 0
 display.number(score)
 
@@ -112,33 +112,51 @@ def button_press_detected():
 
 def fire_the_laser():
     print("FIRE ZEE LASERS!")
-    global servo_speed, kill_flag
+    global servo_speed
 
-    kill_flag = True
-    laser.value(1) 
-
-    utime.sleep_ms(2000)    
-
-    photo_reading = photoresistor_value.read_u16()   
-    print("Laser Voltage Reading: ",photo_reading)
-    
-    utime.sleep_ms(1000)    
-
-    kill_flag = False
-    laser.value(0) 
+    enable_laser()   
+    check_target()     
+    disable_laser()
 
     if (photo_reading > target_reading):
         its_a_hit()  
     else: 
         its_a_miss()
 
+def enable_laser():
+    global kill_flag
+    kill_flag = True
+    laser.value(1) 
+    utime.sleep_ms(2000) 
+
+def disable_laser():
+    global kill_flag
+    utime.sleep_ms(1000)   
+    kill_flag = False
+    laser.value(0)
+
+def check_target():
+    global photo_reading
+    photo_reading = photoresistor_value.read_u16()   
+    print("Laser Voltage Reading: ",photo_reading)
+
+def increase_difficulty():
+    global servo_speed
+    servo_speed = servo_speed + 1
+
+def increase_score():
+    global score
+    score = score + 1
+
+def display_score():
+    display.number(score)
+
 def its_a_hit():
     print("Nice! - A Hit!")
-    global score, servo_speed
     happy_buzz()
-    servo_speed = servo_speed + 1
-    score = score + 1
-    display.number(score)
+    increase_difficulty()
+    increase_score()
+    display_score()
     print("Score: ", score)
 
 def its_a_miss():
