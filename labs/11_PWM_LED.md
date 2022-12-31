@@ -7,8 +7,9 @@ Now we will look at how to use PWM (Pulse Width Modulation) with the RaspberryPi
 ![PWM](/images/Pulse-Width-Modulation.jpg)
 
 
-If powering a motor with PWM, the higher the duty cycle the faster the motor would spin.  If using PWM with an LED, which you'll do this lab, the higher the duty cycle the brighter the LED will be because you the average output voltage will be higher.
-
+If powering a motor with PWM, the higher the duty cycle the faster the motor would spin.  
+If powering an LED with PWM, the higher the duty cycle the brighter the LED will be.
+This is caused by an increase in the average output voltage. (You will see this happen during this lab!)
 
 
  ## What to do
