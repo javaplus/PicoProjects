@@ -87,6 +87,9 @@ Before running the code above, you may want to snap one of the servo horns ontop
 ![Servo Horns](/images/sg90-servo-horns.png)
 
 It doesn't matter which servo horn you use, just snap one on so you can more easily see when it moves.
+There is no need to use a screw here but they are provided in case your final use of your servo would require one to mount to whatever it is you are putting your servo on or in.
+
+The open toothed portion of the horn can easily pop onto the gear of the servo.  Don't be scared.
 
 After you have the code and servo horn in place, click the PLAY button to see your servo spring to life!
 
