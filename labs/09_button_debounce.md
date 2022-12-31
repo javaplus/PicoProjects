@@ -111,7 +111,10 @@ If this works, give someone nearby a high five!
 
 ### Clean Code
 
-**NOTE** Our code is getting a little messy so it would be nice to move some logic into functions.  Feel free to refactor and clean it up yourself or copy our example.
+**NOTE** Our code is getting a little messy so it would be nice to move some logic into functions.  Feel free to refactor and clean it up yourself as a stretch goal (or copy our example below).
+
+
+**NOTE**<details><summary>If you wanna skip the stretch goal of cleaning then click here to see the code.</summary> 
 
 ```Python
 from machine import Pin
@@ -163,5 +166,6 @@ while True:
         button_press_detected()
 
 ```
+</details>
 
 After making the above changes, test you code again to make sure it still works.  Having easy to understand code as well as single purpose functions is key to being able to continue to add features quickly and maintian and debug your code.
