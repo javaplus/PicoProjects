@@ -18,6 +18,8 @@ To start you don't need anything but the pico for this lab.  So, feel free to st
 
 With the breadboard cleared, and the Pico still connected to your USB port, open Thonny and in the bottom right hand corner choose the interpreter for Thonny to use.  If your computer recognized the Pico, you can choose the item that says "**MicroPython(Raspberry Pi Pico)** in the list. (see image below)
 
+Note: if this is your first time launching Thonny you may have to click past the Welcome/language selection splash page.
+
 ![Thonny Select Pico](/images/thonny_pico.PNG)
 
 If having issues connecting see if this detailed guide helps: 
