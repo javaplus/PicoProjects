@@ -32,7 +32,14 @@ led.freq(1000)
 ```
 Here we define the Pin #16 as our pin to use for PWM signals.  We also set the frequency to 1000Hz. That's 1000 pulses per second.  
 
-Since our `"led"` variable now is a PWM object, the `value()` function is invalid.  So, we need to update each place we were calling the `value()` function, to use the [duty_u16()](https://docs.micropython.org/en/latest/library/machine.PWM.html?highlight=pwm#machine.PWM.duty_u16) function.  This function allows us to set the duty cyle with highest value of **65535** being the max or 100% and 0 being the lowest allowed value which is 0%. Therefore, if we want our LED to be at the brightest level, replace `led.value(1)` to `led.duty_u16(65535)` (There's one place this needs replaced).
+Since our `"led"` variable now is a PWM object, the `value()` function is invalid.  So, we need to update each place we were calling the `value()` function, to use the [duty_u16()](https://docs.micropython.org/en/latest/library/machine.PWM.html?highlight=pwm#machine.PWM.duty_u16) function.  
+
+This function allows us to set the duty cycle.  
+
+The lowest possible value is **0** ... but we can also use 0%.
+The highest possible value is **65535** ... but we can also use 100%. 
+
+Therefore, if we want our LED to be at the brightest level, replace `led.value(1)` to `led.duty_u16(65535)` (There's one place this needs replaced).
 To turn the LED completely off, replace `led.value(0)` to `led.duty_u16(0)`(There's two places to replace this).
 
 Here's the full code:
