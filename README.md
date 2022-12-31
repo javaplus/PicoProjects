@@ -14,10 +14,13 @@ If you want to get a little familar with Python before coming you can check out 
 [Python Tutorial](https://www.learnpython.org/)
 
 
-## Overview (Work in progress Below)
+## Overview 
 
-We start with a basic introduction to circuits and some basic electronics.  Without this foundational knowledge, it will be difficult to build useful solutions that integrate code and electronics.
+We start with a basic introduction to circuits and some basic electronics. So, the first several labs only use the Pico as a power source to introduce basic circuits and some electronic components we will be working with.  Without this foundational knowledge, it will be difficult to build useful solutions that integrate code and electronics.
 
+**NOTE on LABS**  
+We provide working code for each lab, but you are welcome to try to code some of the stretch goals or solutions on your own once you get the hang of things.  
+If you finish a lab quickly and see others that are struggling, **your stretch goal is to help a neighbor!**
 
 ## Intro to Circuits.
 
