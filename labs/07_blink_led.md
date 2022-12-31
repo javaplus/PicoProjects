@@ -10,7 +10,7 @@ This will be a short one, we are simply going to blink an external LED.
 Grab your BLUE LED or any LED rated for 3volts.  Put the long pin into column 30 and then the short pin into column 31.  
 
 Connect the short side to the ground/negative rail of the breadboard.
-Connect the long side of the LED to column 20 which is GP16 pin of the Pico. "GP " stands for General Purpose Input Output.  You can refer to your Pico Pinout image to see the different GP pins of the Pico.
+Connect the long side of the LED to column 20 which is GP16 pin of the Pico. "GP " stands for General Purpose Input Output.  You can refer to the Pico Pinout image to see the different GP pins of the Pico. Here's the reference image for the Pico Pinout: [Pico Pin Reference Page](/reference/pico_gpio.md)
 
 ![Blink Diagram](/images/7_blink_external_bb.png)
 
