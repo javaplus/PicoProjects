@@ -18,49 +18,78 @@ If you want to get a little familar with Python before coming you can check out 
 
 We start with a basic introduction to circuits and some basic electronics.  Without this foundational knowledge, it will be difficult to build useful solutions that integrate code and electronics.
 
-[Lab 1](/labs/first_circuit.md)
 
 ## Intro to Circuits.
 
-Simple circuit with LED using power from Pico and turn on LED. 
-- Use 3.3v from Pico and Blue LED to support Voltage.
+Simple circuit with LED using power from Pico and turn on LED.   
+[Lab 1](/labs/1_first_circuit.md)
 
 ## Resistors.
 
-Same simple circuit from above and just add resistors to control the brightness of the LED.
+Same simple circuit from above and just add resistors to control the brightness of the LED.  
+[Lab 2](/labs/2_resistor_intro.md)
 
 ## Variable Resistors (Photoresistor)
 
-Replace resistor with photo resistor and see LED dim and brighten based on light going into photoresisotor
+Working with Light Sensitive Resistors. Also known as Photoresistors.  
+[Lab 3](/labs/3_photo_resistor.md)
 
-## Variable Resistor Potentiometer
+## Variable Resistor (Potentiometer)
 
-Replace Photo resistor with Potentiometer to control brightness of LED
+Use a Potentiometer to control brightness of LED.  
+[Lab 4](/labs/4_potentiometer.md)
 
 ## Buttons/Switches
 
-Go back to normal resistor and then add a button in the circuit so that the LED only comes on when the button is pressed.
+Introduction to using Buttons/Switches with cicuits:  
+[Lab 5](/labs/5_button_circuit.md)
 
-## Control LED from Pico
+## Use Code to Flash LED (First Lab with Pico and MicroPython)
 
-Remove button and wire LED to Pico and ground.  Then write code to blink LED. Maybe blink on board LED first.
-- Stretch goal: having more than one LED.
+Finally, we will use code to light up LEDs:   
+[Lab 6](/labs/6_blink_yo_self.md)  
+[Lab 7](/labs/7_blink_led.md)  
+ 
 
-## Read input (button input)
+## Working with Buttons and the Pico
 
-Hook the button up to the Pico and code it so that the light comes on only when the button is pressed, but have the code detect when the button is pressed and control when the LED comes on.
-- stretch goal: make it so that the LED comes on with one press of the button and stays on and then turns off with a second press of the button.
-- stretch goal: hook up buzzer and have it buzz when button is pressed or create game to have button pressed within a short time after the light goes on.
+Use the Pico to detect when a button is pressed.  
+[Lab 8](/labs/8_button_control.md)  
+[Lab 9](/labs/9_button_debounce.md)  
+[Lab 10](/labs/10_button_interrupt.md)  
 
 
-## PWM with LED
 
-Explain PWM and use PWM to fade an LED in and out and control brightness.
+## Pulse Width Modulation (PWM)
 
-## PWM with Servo
+Explain PWM and use PWM to fade an LED in and out and control brightness.  
+[Lab 11](/labs/11_PWM_LED.md)  
 
-Use PWM to control a servo.  Explain how PWM is the signal/code to control where a servo should move to.  Use SG90 library to control servo.  Maybe dig into the SG90 library a little more to explain PWM.
-- Stretch Goal: sentry program that requires starting at 90 and then slowly panning to the right then panning back to center(90) before panning left again.
+## PWM to Control Servos
+
+Use PWM to control a servo:  
+[Lab 12](/labs/12_servo_control.md) 
+
+
+## Reading PhotoResistor Values
+
+Using Analog input with the Pico:  
+[Lab 13](/labs/13_adc_photoresistor.md)
+
+## Threading in MicroPython
+
+Threading on the Pico:  
+[Lab 14](/labs/14_threading.md) 
+
+
+## Threading in MicroPython
+
+Threading on the Pico:  
+[Lab 15](/labs/15_seven_segment.md) 
+
+
+## Build the Laser Shooting Shark Game:
+ #### Lab not finished yet.
 
 
 
