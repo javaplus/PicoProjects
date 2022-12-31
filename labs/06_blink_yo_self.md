@@ -12,7 +12,7 @@ We are using the Raspberry Pi Pico H which is part of the Pi Foundations new Mic
 
 ## Python
 
-If this is your first time playing with Python you may have find cheatsheet helpful:
+If this is your first time playing with Python you may find this cheatsheet helpful:
 
 [Python Cheatsheet](https://www.pythoncheatsheet.org/)
 
