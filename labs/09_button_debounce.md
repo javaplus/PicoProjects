@@ -114,7 +114,7 @@ If this works, give someone nearby a high five!
 **NOTE** Our code is getting a little messy so it would be nice to move some logic into functions.  Feel free to refactor and clean it up yourself as a stretch goal (or copy our example below).
 
 
-**NOTE**<details><summary>If you wanna skip the stretch goal of cleaning then click here to see the code.</summary> 
+<details><summary>If you wanna skip the stretch goal of cleaning then click here to see the code.</summary> 
 
 ```Python
 from machine import Pin
