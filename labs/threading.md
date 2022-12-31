@@ -19,7 +19,7 @@ Follow the diagram below to connect the blue LED positive leg to column 25 and t
 ![Servo Diagram](/images/servo_with_led_pico_bb.png)
 
 
-Once you have the pico wired, we need to write the code to control the servo and fade the LED in and out.  This code should look familiar it's pretty much the servo code from last lab along with a function to fade LED in and out added to it.
+Once you have the pico wired, we need to write the code to control the servo and fade the LED in and out.  This code should look familiar because it's pretty much the servo code from last lab along with a function to fade LED in and out added to it.
 
 ```Python
 from machine import Pin,PWM
@@ -144,7 +144,7 @@ If you got this to work, pat your head and rub your tummy at the same time!
 
 What if I need to pass information from one Thread to another.  Well in the full blown Python ecosystem, you'd have access the [queue](module) which is a great way of asynchronously and safely passing data between threads.  However, as of this time, this does not exist in MicroPython. So, to share data in MicroPython between running threads, I've only been able to succeed with [global variables](https://www.freecodecamp.org/news/python-global-variables-examples/). Probably not the best solution, but I can't find a better way within MicroPython.
 
-So, we are going to modify the code above now to have the main thread calculate how fast the servo's should be scanning, but increasing the speed(actually the step) the servo uses to rotate.  
+We are going to modify the code above now to have the main thread calculate how fast the servo should be scanning by increasing the speed(actually the step) the servo uses to rotate.  
 I've added a function called `set_servo_speed()` which retuns the value the servo should step at... it starts at 1 and every 5 seconds it increases it by 1.
 
 Here's the whole code:
