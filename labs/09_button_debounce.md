@@ -57,6 +57,8 @@ In our code, we will now create a debounce_timer flag to keep track of the time 
 If you'd like to try it yourself without copying our code, you may find the documentation for the [time library](https://docs.micropython.org/en/latest/library/time.html#module-time) helpful.  NOTE: time and utime are the same.  Importing time is the same as importing utime.  
 The **ticks_ms()** and the **ticks_diff()** function are useful.
 
+So, using the time library referenced above, attempt to fix the issue by starting a timer when the button is pressed and then don't act on any other button presses until 500ms (half a second) has passed.  You will need a global variable that keeps track of the last button pressed time.
+
 <details>
  <summary>To see working code for this click the arrow beside here to expand the code!</summary>
   
