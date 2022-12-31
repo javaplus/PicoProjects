@@ -10,6 +10,12 @@ We are using the Raspberry Pi Pico H which is part of the Pi Foundations new Mic
 
 [Official Pico Page](https://www.raspberrypi.com/products/raspberry-pi-pico/)
 
+## Python
+
+If this is your first time playing with Python you may have find cheatsheet helpful:
+
+[Python Cheatsheet](https://www.pythoncheatsheet.org/)
+
  ## What to do
 
 To start you don't need anything but the pico for this lab.  So, feel free to strip everything else off except the Pico. I would leave the wires connecting the Pico to the power rails although technically they are not needed for this lab.
