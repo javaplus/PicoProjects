@@ -39,6 +39,17 @@ while True:
     led.toggle()
     utime.sleep_ms(1000)
 ```
+
+A note about the code above:
+
+You'll notice that there is a while True statement at the end.
+
+while True means loop forever. The while statement takes an expression and executes the loop body while the expression evaluates to (boolean) "true". True always evaluates to boolean "true" and thus executes the loop body indefinitely.
+
+This is the section of the code that our pico will run forever and ever, over and over again.  
+(Unless we define a way for it to break out)
+
+
 **NOTE**<details><summary> Click here for how to make this work with Pico W.</summary> 
 If using the Pico W the internal pin for the LED is NOT 25.  It's the string "LED". So, assuming you flashed your Pico W with the right MicroPython library(the one for the Pico W), then the led line above would look like this for the Pico W:
 ```Python
