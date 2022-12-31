@@ -19,7 +19,7 @@ We will now plug our Photoresistor back into the board and write some code to re
 You can skip to the wiring diagram below and just follow it, but below is more descriptive instructions.
 
 Clear the board except for the wires connecting to the power rails.
-Then add the photoresistor with one leg into column 35 and the other leg in column 38.  Connect the leg in column 38 to the 3.3v power rail.
+Then add the photoresistor with one leg into column 35 and the other leg in column 38.  Connect the leg of the photoresistor in column 38 to the 3.3v power rail.
 
 Now connect the leg of the photoresistor in column 35(left leg) to to the pin on the Pico in Column 7, Row I or J (this is our ADC pin).  Now connect that same leg of the photoresistor in column 35 to ground with a 10K resistor.
 
