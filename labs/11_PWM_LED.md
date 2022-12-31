@@ -37,6 +37,7 @@ Since our `"led"` variable now is a PWM object, the `value()` function is invali
 This function allows us to set the duty cycle.  
 
 The lowest possible value is **0** ... but we can also use 0%.
+
 The highest possible value is **65535** ... but we can also use 100%. 
 
 Therefore, if we want our LED to be at the brightest level, replace `led.value(1)` to `led.duty_u16(65535)` (There's one place this needs replaced).
