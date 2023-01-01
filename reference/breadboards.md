@@ -4,7 +4,7 @@
 Breadboards are typically used for prototyping electronic circuits.
 We will be using a Breadboard for each lab.  So, understanding how they work is critical. 
 
-Here is a great link explaining how the work:  
+Here is a great link explaining how breadboards work:  
 [What is a Breadboard and How Do You Use One](https://www.makeuseof.com/tag/what-is-breadboard/)
 
 #### This illustrates how the different rows of pins are connected:  
