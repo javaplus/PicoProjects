@@ -25,7 +25,65 @@ TODO: List some specific code snippets from previous
 **NOTE**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
 If using the Pico W the internal pin for the LED is NOT 25.  It's the string "LED". So, assuming you flashed your Pico W with the right MicroPython library(the one for the Pico W), then the led line above would look like this for the Pico W:
 ```Python
-TODO: put the solution here
+
+from machine import Pin,PWM,ADC
+from math import modf
+import utime
+
+photoresistor_value = machine.ADC(28)
+
+initial_photo_reading = photoresistor_value.read_u16()
+print("Initial Laser Voltage Reading: ", initial_photo_reading)
+
+laser = Pin(20, Pin.OUT)
+laser.value(0)
+
+button = Pin(17, Pin.IN, Pin.PULL_DOWN)
+
+# debounce utime saying wait 5 seconds between button presses
+DEBOUNCE_utime = 5000
+
+# debounce counter is our counter from the last button press
+# initialize to current utime
+debounce_counter = utime.ticks_ms()
+       
+# Function to handle when the button is pressed
+def button_press_detected():
+    global debounce_counter
+    current_utime = utime.ticks_ms()
+    
+    # Calculate utime passed since last button press
+    utime_passed = utime.ticks_diff(current_utime,debounce_counter)
+
+    # print("utime passed=" + str(utime_passed))
+    if (utime_passed > DEBOUNCE_utime):
+        print("Button Pressed!")
+        # set debounce_counter to current utime
+        debounce_counter = utime.ticks_ms()
+
+        fire_the_laser()    
+    #else:
+        #print("Not enough utime")
+
+def fire_the_laser():
+    print("FIRE ZEE LASERS!")
+    enable_laser()   
+    check_target()     
+    disable_laser()
+
+def enable_laser():
+    laser.value(1) 
+
+def disable_laser():
+    laser.value(0)
+
+# Below executes in the main(first) thread.
+while True:
+
+    if button.value()==True:
+        button_press_detected()
+
+
 ```
 </details>
 

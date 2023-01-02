@@ -15,6 +15,9 @@ In this part 2 of 3 for our final game you will do the following:
 
 ## What to do
 
+First of all stand up and walk over to pick up your shark!  Good time for a stretch, eh?
+
+
 TODO: Insert diagram here of breadboard with servo and 3 LEDs added
 
 ![Game Part 2 Diagram](/images/needanimagehere.png)
@@ -43,7 +46,123 @@ TODO: List some specific code snippets from previous labs to help guide them
 
 **NOTE**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
 ```Python
-TODO: put the solution here
+
+
+from machine import Pin,PWM,ADC
+from math import modf
+import utime, sg90, _thread
+
+photoresistor_value = machine.ADC(28)
+
+initial_photo_reading = photoresistor_value.read_u16()
+print("Initial Laser Voltage Reading: ", initial_photo_reading)
+
+# Initialize LEDs to on at beginning
+# These LEDs indicate lives remaining
+led1 = Pin(16, Pin.OUT)
+led1.value(1)
+led1_on = True
+led2 = Pin(18, Pin.OUT)
+led2.value(1)
+led2_on = True
+led3 = Pin(19, Pin.OUT)
+led3.value(1)
+led3_on = True
+
+laser = Pin(20, Pin.OUT)
+laser.value(0)
+
+button = Pin(17, Pin.IN, Pin.PULL_DOWN)
+
+# Initialize Servo
+sg90.servo_pin(15)
+SMOOTH_TIME = 80
+servo_speed = 1
+
+# debounce utime saying wait 5 seconds between button presses
+DEBOUNCE_utime = 5000
+
+# debounce counter is our counter from the last button press
+# initialize to current utime
+debounce_counter = utime.ticks_ms()
+       
+def scan(servo):
+    stepping = servo_speed
+    for i in range(45,130, stepping):
+        if (kill_flag):
+            break
+        servo.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+
+    for i in range(130,45, -stepping):
+        if (kill_flag):
+            break
+        servo.move_to(i)
+        utime.sleep_ms(SMOOTH_TIME)
+        
+# define a function to execute in the second thread
+def second_thread_func():
+    while True:
+        # fix for import failing in second thread when it's inside a function
+        servo = sg90
+        stepping = servo_speed
+        scan(servo)
+        #print("servo_speed=", servo_speed)
+        utime.sleep_ms(100)
+
+# Start the second thread
+_thread.start_new_thread(second_thread_func,())
+
+# Function to handle darkening one LED
+def remove_led():
+    global led3_on, led3, led2_on, led2, led1_on, led1, lives_left
+    if(led3_on):
+      led3.value(0)
+      led3_on = False
+    else:
+        if(led2_on):
+          led2.value(0)
+          led2_on = False
+        else:
+            led1.value(0)
+            led1_on = False
+            
+# Function to handle when the button is pressed
+def button_press_detected():
+    global debounce_counter
+    current_utime = utime.ticks_ms()
+    
+    # Calculate utime passed since last button press
+    utime_passed = utime.ticks_diff(current_utime,debounce_counter)
+
+    # print("utime passed=" + str(utime_passed))
+    if (utime_passed > DEBOUNCE_utime):
+        print("Button Pressed!")
+        # set debounce_counter to current utime
+        debounce_counter = utime.ticks_ms()
+
+        fire_the_laser()    
+    #else:
+        #print("Not enough utime")
+
+def fire_the_laser():
+    print("FIRE ZEE LASERS!")
+    enable_laser()   
+    check_target()     
+    disable_laser()
+
+def enable_laser():
+    laser.value(1) 
+
+def disable_laser():
+    laser.value(0)
+
+# Below executes in the main(first) thread.
+while True:
+    if button.value()==True:
+        button_press_detected()
+
+
 ```
 </details>
 
