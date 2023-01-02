@@ -27,40 +27,40 @@ If you finish a lab quickly and see others that are struggling, **your stretch g
 ## Intro to Circuits.
 
 Simple circuit with LED using power from Pico and turn on LED.   
-[Lab 1](/labs/1_first_circuit.md)
+[Lab 1](/labs/01_first_circuit.md)
 
 ## Resistors.
 
 Same simple circuit from above and just add resistors to control the brightness of the LED.  
-[Lab 2](/labs/2_resistor_intro.md)
+[Lab 2](/labs/02_resistor_intro.md)
 
 ## Variable Resistors (Photoresistor)
 
 Working with Light Sensitive Resistors. Also known as Photoresistors.  
-[Lab 3](/labs/3_photo_resistor.md)
+[Lab 3](/labs/03_photo_resistor.md)
 
 ## Variable Resistor (Potentiometer)
 
 Use a Potentiometer to control brightness of LED.  
-[Lab 4](/labs/4_potentiometer.md)
+[Lab 4](/labs/04_potentiometer.md)
 
 ## Buttons/Switches
 
 Introduction to using Buttons/Switches with cicuits:  
-[Lab 5](/labs/5_button_circuit.md)
+[Lab 5](/labs/05_button_circuit.md)
 
 ## Use Code to Flash LED (First Lab with Pico and MicroPython)
 
 Finally, we will use code to light up LEDs:   
-[Lab 6](/labs/6_blink_yo_self.md)  
-[Lab 7](/labs/7_blink_led.md)  
+[Lab 6](/labs/06_blink_yo_self.md)  
+[Lab 7](/labs/07_blink_led.md)  
  
 
 ## Working with Buttons and the Pico
 
 Use the Pico to detect when a button is pressed.  
-[Lab 8](/labs/8_button_control.md)  
-[Lab 9](/labs/9_button_debounce.md)  
+[Lab 8](/labs/08_button_control.md)  
+[Lab 9](/labs/09_button_debounce.md)  
 [Lab 10](/labs/10_button_interrupt.md)  
 
 
