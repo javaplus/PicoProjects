@@ -87,9 +87,9 @@ Threading on the Pico:
 [Lab 14](/labs/14_threading.md) 
 
 
-## Threading in MicroPython
+## Seven Segment Display
 
-Threading on the Pico:  
+Seven Segment Display: 
 [Lab 15](/labs/15_seven_segment.md) 
 
 
