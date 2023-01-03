@@ -75,17 +75,16 @@ Explain PWM and use PWM to fade an LED in and out and control brightness.
 Use PWM to control a servo:  
 [Lab 12](/labs/12_servo_control.md) 
 
+## Threading in MicroPython
+
+Threading on the Pico:  
+[Lab 13](/labs/13_threading.md) 
+
 
 ## Reading PhotoResistor Values
 
 Using Analog input with the Pico:  
-[Lab 13](/labs/13_adc_photoresistor.md)
-
-## Threading in MicroPython
-
-Threading on the Pico:  
-[Lab 14](/labs/14_threading.md) 
-
+[Lab 14](/labs/14_adc_photoresistor.md)
 
 ## Seven Segment Display
 
