@@ -98,7 +98,7 @@ Threading on the Pico:
 
 
 
-## Referenes:
+## References:
   May need references for Python on how to do various things:
   - [While loops](https://www.geeksforgeeks.org/python-while-loop/)
   - [for loops](https://www.geeksforgeeks.org/python-for-loops/)
