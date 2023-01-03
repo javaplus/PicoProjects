@@ -89,7 +89,7 @@ Threading on the Pico:
 
 ## Seven Segment Display
 
-Seven Segment Display: 
+Seven Segment Display:  
 [Lab 15](/labs/15_seven_segment.md) 
 
 
