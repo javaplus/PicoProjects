@@ -24,7 +24,7 @@ In this lab, we are going to learn how to make the buzzer buzz at different freq
 
 In the last lab, we used PWM to fade an LED by updating the duty cycle after setting a fixed frequency.  With the buzzer, we will use the duty cycle to control the volume of the buzzer and use the frequency to control the pitch.
 
-For wiring, this one, we will remove the button and the wires connecting to the button and then replace the LED with the buzzer.  You can plug the long leg (+) of the buzzer into Column 30 and keep the wire going from Column 30 to the Pico at column 20 (GP16).  Next run a wire from the short pin of the buzzer(-) to ground.  The short pin of the buzzer should fit nicely into Column 34 if the positive pin is in Column 30.
+For wiring this one, we will remove the button from the last lab along with it's wires and then replace the LED with the buzzer.  You can plug the long leg (+) of the buzzer into Column 30 and the short leg(-) into Column 33.  Keep the wire going connecting the positive side of the buzzer at Column 30 to the Pico at column 20 (GP16).  Next run a wire from the short pin of the buzzer(-) to ground.  
 
 ![Buzzer Wiring Diagram](/images/11b_buzzer_bb.png)
 
