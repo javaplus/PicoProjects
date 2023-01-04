@@ -24,209 +24,36 @@ In this lab, we are going to learn how to make the buzzer buzz at different freq
 
 In the last lab, we used PWM to fade an LED by updating the duty cycle after setting a fixed frequency.  With the buzzer, we will use the duty cycle to control the volume of the buzzer and use the frequency to control the pitch.
 
+For wiring, this one, we will remove the button and the wires connecting to the button and then replace the LED with the buzzer.  You can plug the long leg (+) of the buzzer into Column 30 and keep the wire going from Column 30 to the Pico at column 20 (GP16).  Next run a wire from the short pin of the buzzer(-) to ground.  The short pin of the buzzer should fit nicely into Column 34 if the positive pin is in Column 30.
+
+![Buzzer Wiring Diagram](/images/11b_buzzer_bb.png)
+
+Next we will write a simple program to fluctuate the PWM frequency to make our buzzer make sounds at different pitches.
+
 Here is the code:
 
 ```Python
 from machine import Pin, PWM
-
-led = PWM(Pin(16))
-led.freq(1000)
-```
-Here we define the Pin #16 as our pin to use for PWM signals.  We also set the frequency to 1000Hz. That's 1000 pulses per second.  
-
-Since our `"led"` variable now is a PWM object, the `value()` function is invalid.  So, we need to update each place we were calling the `value()` function, to use the [duty_u16()](https://docs.micropython.org/en/latest/library/machine.PWM.html?highlight=pwm#machine.PWM.duty_u16) function.  
-
-This function allows us to set the duty cycle.  
-
-The lowest possible value is **0** ... but we can also use 0%.
-
-The highest possible value is **65535** ... but we can also use 100%. 
-
-Therefore, if we want our LED to be at the brightest level, replace `led.value(1)` to `led.duty_u16(65535)` (There's one place this needs replaced).
-To turn the LED completely off, replace `led.value(0)` to `led.duty_u16(0)`(There's two places to replace this).
-
-Here's the full code:
-
-```Python
-from machine import Pin, PWM
 import utime
 
-led = PWM(Pin(16))
-led.freq(1000)
-button = Pin(17, Pin.IN, Pin.PULL_DOWN)
-
-led.duty_u16(0) # init led to off
-# Flag for if LED is on or off
-led_on = False
+buzzer = PWM(Pin(16))
 
 
-# debounce utime saying 500ms between button presses
-DEBOUNCE_utime = 500
-# debounce counter is our counter from the last button press
-# initialize to current utime
-debounce_counter = utime.ticks_ms()
-
-# define flag to say when button is pressed:
-button_pressed = False
-
-# define function to be called when button is pressed
-def button_interrupt_handler(pin):
-    # since this is called by an interrupt do very little
-    # need to give control back to CPU quickly.
-    # Could possibly do debounce work here???
-    global button_pressed
-    button_pressed = True
-
-## define interrupt to call our function when button is pressed:
-button.irq(trigger=Pin.IRQ_RISING, handler=button_interrupt_handler)    
-
-# Function to handle turning LED off and on and setting flag
-def toggle_led():
-    global led_on
-    if(led_on):
-        led.duty_u16(0) 
-        led_on = False
-    else:
-        led.duty_u16(65535) # 65535 is max
-        led_on = True
-
-# Function to handle when the button is pressed
-def button_press_detected():
-    global debounce_counter, button_pressed
-    current_utime = utime.ticks_ms()
-    # Calculate utime passed since last button press
-    utime_passed = utime.ticks_diff(current_utime,debounce_counter)
-    print("utime passed=" + str(utime_passed))
-    if (utime_passed > DEBOUNCE_utime):
-        print("Button Pressed!")
-        # set debounce_counter to current utime
-        debounce_counter = utime.ticks_ms()
-        toggle_led()
-        button_pressed=False
-    
-    else:
-        button_pressed = False
-        print("Not enough utime")
-
-while True:
-    if button_pressed==True:
-        button_press_detected()
-
-
-```
-After updating the code click the STOP button to reset and then click the Play button to run the new code.
-
-Try pressing the button to toggle the LED on and off.
-If everything is working, then you should see the button toggle off and on as you press and release the button. It should still operate the same, but now using PWM.
-
-Not super exciting yet, but wait there's more!
-
-## See the Power of PWM!
-
-To see some difference with PWM verses the pure binary on and off, try playing with the value passed to the `led.duty_16(65535)` method.  Replace **65535** with a lower value so that when the LED comes on, it's not as bright.  Something like this:  
-```Python
-    led.duty_u16(5000) # 65535 is max
-```
-
-Retest with different values to see how it affects the brightness of the LED.
-
-After you are bored with that, let's make some cool affects with PWM.
-
-What we'll do now is make pressing the button slowly increase the brightness to max and then pressing it again slowly dim it till it's off.
-
-To do this, we will simply add a for loop in the block of code that turns on or off the LED to slowly adjust the duty cycle up or down.  Here's an example for loop to slowly increase in brightness:
-
-```Python
-       for duty in range(0,65535,1):
-            led.duty_u16(duty) # 65535 is max
-```
-**NOTE** The 3rd parameter of the for loop is the step.  That is how much to count by.  If you want to could by 5's, then change the 1 to 5.
-
-Here's an example for loop to slowly decrease in brightness:
-
-```Python
-       for duty in range(65535,0,-1):
-            led.duty_u16(duty) # 65535 is max
-```
-
-You can swap out the code that turns the LED on and off with these loops to see the LED more slowly light up and turn off.  These for loops may still cause it to light up and dim quickly.  Can you think how you could slow the light up or dimming down?
-
-Here's the full code:
-
-```Python
-from machine import Pin, PWM
-import utime
-
-led = PWM(Pin(16))
-led.freq(1000)
-button = Pin(17, Pin.IN, Pin.PULL_DOWN)
-
-led.duty_u16(0) # init led to off
-# Flag for if LED is on or off
-led_on = False
-
-
-# debounce utime saying 500ms between button presses
-DEBOUNCE_utime = 500
-# debounce counter is our counter from the last button press
-# initialize to current utime
-debounce_counter = utime.ticks_ms()
-
-# define flag to say when button is pressed:
-button_pressed = False
-
-# define function to be called when button is pressed
-def button_interrupt_handler(pin):
-    # since this is called by an interrupt do very little
-    # need to give control back to CPU quickly.
-    # Could possibly do debounce work here???
-    global button_pressed
-    button_pressed = True
-
-## define interrupt to call our function when button is pressed:
-button.irq(trigger=Pin.IRQ_RISING, handler=button_interrupt_handler)    
-
-# Function to handle turning LED off and on and setting flag
-def toggle_led():
-    global led_on
-    if(led_on):
-        for duty in range(65535,0,-1):
-            led.duty_u16(duty) # 65535 is max
-        led_on = False
-    else:
-        for duty in range(0,65535,1):
-            led.duty_u16(duty) # 65535 is max
-        led_on = True
-
-# Function to handle when the button is pressed
-def button_press_detected():
-    global debounce_counter, button_pressed
-    current_utime = utime.ticks_ms()
-    # Calculate utime passed since last button press
-    utime_passed = utime.ticks_diff(current_utime,debounce_counter)
-    print("utime passed=" + str(utime_passed))
-    if (utime_passed > DEBOUNCE_utime):
-        print("Button Pressed!")
-        # set debounce_counter to current utime
-        debounce_counter = utime.ticks_ms()
-        toggle_led()
-        button_pressed=False
-    
-    else:
-        button_pressed = False
-        print("Not enough utime")
-
-while True:
-    if button_pressed==True:
-        button_press_detected()
+for freq in range(10, 1000, 100):
+    buzzer.freq(freq)
+    buzzer.duty_u16(30000)
+    utime.sleep_ms(300)
 
 ```
 
-If you got this to work, eat some gummies!
+This code will loop from 10 to 1000 with steps of 100. That is freq will be 10, then 110, then 210, then 310, etc... up to 1000.  This will cause the buzzer to buzz at each of these frequencies for 300 milliseconds(thanks to the sleep call) and at a hard coded duty cycle of 30000.  
+
+If you got this to work, do your best bee impression and buzz!
 
 ## Stretch Goal
 
-Play with the for loops and optionally some sleeping in your for loop to get the LEDs to light up slowly or dim slowly.
+Play with the for loop the start and stopping range as well as the steps and the sleep time to get it to make interesting noises.  Rember with the `range(start, stop, step)` function, the start can be less than the stop if you use a negative step.  This way you can go backwards. 
 
-After that, a bigger challenge would to have multiple presses of the  button actually increase the brightness and then after it's at its brightest level it turns off.  Kind of like the touch lamps of old.  Each touch would brighten the light until it reached it's max and then it would turn off.
+Also, play with the duty cycle value passed to the `duty_u16()` method to see what impact that has.  Remember valid duty cycle values are between 0 and 65535 (max unsigned int size).
+
 
