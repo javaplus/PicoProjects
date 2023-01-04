@@ -101,15 +101,14 @@ Seven Segment Display:
 
 
 ## References:
-  May need references for Python on how to do various things:
+  #### Python:
   - [While loops](https://www.geeksforgeeks.org/python-while-loop/)
   - [for loops](https://www.geeksforgeeks.org/python-for-loops/)
   - [if statements](https://www.geeksforgeeks.org/python3-if-if-else-nested-if-if-elif-statements/)
   - [time calculations/deltas](https://docs.micropython.org/en/latest/library/time.html#time.ticks_diff)
-  - etc...
+ 
+#### Pico:
 
-### Pico:
-
-[MicroPython RP Pico Library](https://docs.micropython.org/en/latest/rp2/quickref.html)
-
+- [MicroPython RP Pico Library](https://docs.micropython.org/en/latest/rp2/quickref.html)  
+- [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
 ## 
