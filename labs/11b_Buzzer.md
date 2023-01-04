@@ -56,4 +56,7 @@ Play with the for loop the start and stopping range as well as the steps and the
 
 Also, play with the duty cycle value passed to the `duty_u16()` method to see what impact that has.  Remember valid duty cycle values are between 0 and 65535 (max unsigned int size).
 
+## References
+
+- [Play Music With Buzzer and Pico](https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico)
 
