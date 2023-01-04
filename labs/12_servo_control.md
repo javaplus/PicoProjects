@@ -150,6 +150,12 @@ while True:
 
 If you got this to work, scan the room for someone cool, when found go to them and say, "Hey you're smoother than zero duty cycle!"
 
+## PWM Banks on the Pico
+
+There are less PWM channels on the PICO than there are GPIO pins. So some pins actually are tied to the same Pins.
+
+![PWM Table](/images/GPIO_PWM-Table.webp)
+
 ## References:
 
 [Servo Explained](https://www.sparkfun.com/servos)
