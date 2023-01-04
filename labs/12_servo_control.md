@@ -158,6 +158,6 @@ There are less PWM channels on the PICO than there are GPIO pins. So some pins a
 
 ## References:
 
-[Servo Explained](https://www.sparkfun.com/servos)
-[SG90 Specs](https://servodatabase.com/servo/towerpro/sg90)
+[Servo Explained](https://www.sparkfun.com/servos)  
+[SG90 Specs](https://servodatabase.com/servo/towerpro/sg90)  
 [Pico PWM Primer](https://www.codrey.com/raspberry-pi/raspberry-pi-pico-pwm-primer/)
