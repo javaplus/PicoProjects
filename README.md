@@ -68,7 +68,10 @@ Use the Pico to detect when a button is pressed.
 ## Pulse Width Modulation (PWM)
 
 Explain PWM and use PWM to fade an LED in and out and control brightness.  
-[Lab 11](/labs/11_PWM_LED.md)  
+[Lab 11](/labs/11_PWM_LED.md)
+
+Buzzer lab with PWM.  
+[Lab 11b](/labs/11b_Buzzer.md)
 
 ## PWM to Control Servos
 
