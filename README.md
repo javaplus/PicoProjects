@@ -96,9 +96,9 @@ Seven Segment Display:
 
 
 ## Build the Laser Shooting Shark Game:
-[Final Lab 01](/labs/f01_fire_zee_lasers.md) 
-[Final Lab 02](/labs/f02_sharks_with_lasers.md) 
-[Final Lab 03](/labs/f03_grand_finale.md) 
+[Final Lab 01](/labs/f01_fire_zee_lasers.md)  
+[Final Lab 02](/labs/f02_sharks_with_lasers.md)  
+[Final Lab 03](/labs/f03_grand_finale.md)  
 
 
 
