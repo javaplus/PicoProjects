@@ -79,6 +79,11 @@ def disable_laser():
     utime.sleep_ms(1000)   
     laser.value(0)
 
+def check_target():
+    global photo_reading
+    photo_reading = photoresistor_value.read_u16()   
+    print("Laser Voltage Reading: ",photo_reading)
+
 # Below executes in the main(first) thread.
 while True:
 
