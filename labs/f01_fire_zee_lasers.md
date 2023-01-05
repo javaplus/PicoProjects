@@ -24,8 +24,8 @@ Once you have the pico wired, take some time to attempt to code the points outli
 
 If you've given that a good effort and need a little guidance check out the code solution by clicking on the link below: 
 
-Code Solution <details><summary></summary> 
-If using the Pico W the internal pin for the LED is NOT 25.  It's the string "LED". So, assuming you flashed your Pico W with the right MicroPython library(the one for the Pico W), then the led line above would look like this for the Pico W:
+<details><summary>Code!</summary> 
+
 ```Python
 
 from machine import Pin,PWM,ADC
