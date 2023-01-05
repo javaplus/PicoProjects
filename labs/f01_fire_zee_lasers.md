@@ -6,6 +6,7 @@ You are now well prepared for our final objective.  What's a mad scientist pre-c
 
 In this part 1 of 3 for our final game you will do the following:
 
+- Wire the photo resistor through the two little holes in the middle of your target and place the target end cap on one end of the ruler with the photo resistor side facing towards the rest of the ruler
 - Detect a button press (use various button labs as a reference)... if this happens the pico should FIRE ZEE LASER and the photores (our target) needs to read the current value (use various button labs as a reference).
 - Once the button has been pressed we need to lock out the player from another attempt for 5 seconds (use debounce lab as a reference)
 

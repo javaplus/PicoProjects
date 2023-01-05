@@ -8,7 +8,6 @@ In this part 2 of 3 for our final game you will do the following:
 - Mount the laser to your sharkhead
 - Mount the servo on the ruler end cap
 - Mount the shark on the servo (see below for setting "home" on your servo)
-- Wire the photo resistor to our target and place the target end cap on the opposite side of the ruler
 - Add code that will pan our servo back and forth (in its own thread)
 - Add code to manage the lighting of 3 separate LEDs (default all start out turned on)
 - Create a function that will turn off one of the remaining lit LEDs
