@@ -73,8 +73,10 @@ def fire_the_laser():
 
 def enable_laser():
     laser.value(1) 
+    utime.sleep_ms(2000) 
 
 def disable_laser():
+    utime.sleep_ms(1000)   
     laser.value(0)
 
 # Below executes in the main(first) thread.

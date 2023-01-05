@@ -76,6 +76,9 @@ sg90.servo_pin(15)
 SMOOTH_TIME = 80
 servo_speed = 1
 
+buzzer = PWM(Pin(9))
+buzzer.freq(1000)
+
 # flag so the laser can interrupt the scan cycle
 kill_flag = False
 
@@ -84,7 +87,7 @@ DEBOUNCE_utime = 5000
 
 # debounce counter is our counter from the last button press
 # initialize to current utime
-debounce_counter = utime.ticks_ms()
+debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
        
 def scan(servo):
     stepping = servo_speed
@@ -202,10 +205,22 @@ def its_a_miss():
     remove_led()
 
 def happy_buzz():
-    print("Time to get buzzed!") # TODO - this method
+    print("Time to get happy buzzed!") # TODO - this method
+    
+    for freq in range(100,6000,500):
+        buzzer.freq(freq)
+        buzzer.duty_u16(40000)
+        utime.sleep_ms(500)
+    buzzer.duty_u16(0)
+       
 
 def sad_buzz():
-    print("Time to get buzzed!") # TODO - this method
+    print("Time to get sad buzzed!") # TODO - this method
+    for freq in range(6000,100,-500):
+        buzzer.freq(freq)
+        buzzer.duty_u16(20000)
+        utime.sleep_ms(500)
+    buzzer.duty_u16(0)
 
 def end_of_game_buzz():
     print("Time to get buzzed!") # TODO - this method
