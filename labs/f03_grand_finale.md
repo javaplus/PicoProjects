@@ -21,17 +21,13 @@ TODO: Insert final diagram here with everything setup
 
 ![Game Finale Diagram](/images/needanimagehere.png)
 
-![Game Stage Illustration](/images/needanimagehere.png)
+![Game Stage Illustration](/images/gamestage.png)
 
-Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on your code from the Sharks With Laser Beams lab.
+Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on our code from the Sharks With Laser Beams lab.
 
-TODO: give helpful hint on setting a baseline photores value to determine if a hit happened or not from the laser
+Helpful hint: Setting a baseline photores value to determine if a hit happened or not from the laser (in the code solution provided below I used a 20% variance between an initial photores reading and the reading pulled in during a laser attempt)
 
-TODO: List some specific code snippets from previous labs to help guide them
-
-TODO: Explain lining up the servo on the shark/ruler with a start/stop or a simple set degree command they can send in the console
-
-**NOTE**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
+**Code here:**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
 ```Python
 
 
@@ -45,7 +41,7 @@ initial_photo_reading = photoresistor_value.read_u16()
 print("Initial Laser Voltage Reading: ", initial_photo_reading)
 
 # target will recognize a hit when there is a 20% increase in light
-target_reading = initial_photo_reading * 1.2   # TODO - potentially need a different percentage based on laser and photores being used
+target_reading = initial_photo_reading * 1.2   # potentially need a different percentage based on laser and photores being used
 print("Target Goal Lighting: ", target_reading)
 
 # Initialize LEDs to on at beginning
@@ -205,25 +201,37 @@ def its_a_miss():
     remove_led()
 
 def happy_buzz():
-    print("Time to get happy buzzed!") # TODO - this method
+    print("Happy buzz!")
     
-    for freq in range(100,6000,500):
-        buzzer.freq(freq)
-        buzzer.duty_u16(40000)
-        utime.sleep_ms(500)
-    buzzer.duty_u16(0)
-       
-
-def sad_buzz():
-    print("Time to get sad buzzed!") # TODO - this method
-    for freq in range(6000,100,-500):
-        buzzer.freq(freq)
+    buzzer.freq(100000)
+    for count in range(1,3,1):
         buzzer.duty_u16(20000)
         utime.sleep_ms(500)
     buzzer.duty_u16(0)
 
+def sad_buzz():
+    print("Sad buzz!")
+    
+    buzzer.freq(1000)
+    for count in range(1,3,1):
+        buzzer.duty_u16(10000)
+        utime.sleep_ms(500)
+    buzzer.duty_u16(0)
+
 def end_of_game_buzz():
-    print("Time to get buzzed!") # TODO - this method
+    print("End of game jingle buzz!")
+    for count in range(1,10,1):
+        buzzer.duty_u16(10000)
+        buzzer.freq(1000 * count)
+        utime.sleep_ms(100)
+        
+    for count in range(10,1,-1):
+        buzzer.duty_u16(10000)
+        buzzer.freq(1000 * count)
+        utime.sleep_ms(100)  
+        
+    buzzer.duty_u16(0)
+
 
 # Below executes in the main(first) thread.
 while True:
@@ -233,7 +241,6 @@ while True:
     else:
         print("Game Over!")
         kill_flag = True
-        laser.value(1)
         sys.exit()
 
 
@@ -245,7 +252,4 @@ while True:
 
 
 If you got all of this to work, then go for a new high score!  and then another!  and then another!  and then another!
-
-
-## References:
-
+Also if you're still reading this be sure to go find the hidden easter egg image of our first sketch of the shark game.  :)
