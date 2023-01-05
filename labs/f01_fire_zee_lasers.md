@@ -17,6 +17,8 @@ TODO: Insert diagram here of breadboard with button, laser, andd photores connec
 ![Game Part 1 Diagram](/images/needanimagehere.png)
 
 
+Note: This is your first time playing with a laser in our lab, it hooks up just like an LED!
+
 Once you have the pico wired, take some time to attempt to code the points outlined in the overview using the old labs.
 
 TODO: List some specific code snippets from previous 
