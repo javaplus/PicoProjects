@@ -25,7 +25,7 @@ TODO: Insert final diagram here with everything setup
 
 Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on our code from the Sharks With Laser Beams lab.
 
-Helpful hint: Setting a baseline photores value to determine if a hit happened or not from the laser (in the code solution provided below I used a 20% variance between an initial photores reading and the reading pulled in during a laser attempt)
+Helpful hint: Set a baseline photores value to determine if a hit happened or not from the laser (in the code solution provided below I used a 20% variance between an initial photores reading and the reading pulled in during a laser attempt)
 
 **Code here:**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
 ```Python
