@@ -47,7 +47,7 @@ DEBOUNCE_utime = 5000
 
 # debounce counter is our counter from the last button press
 # initialize to current utime
-debounce_counter = utime.ticks_ms()
+debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
        
 # Function to handle when the button is pressed
 def button_press_detected():

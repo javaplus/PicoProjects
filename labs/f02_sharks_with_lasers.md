@@ -90,7 +90,7 @@ DEBOUNCE_utime = 5000
 
 # debounce counter is our counter from the last button press
 # initialize to current utime
-debounce_counter = utime.ticks_ms()
+debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
        
 def scan(servo):
     stepping = servo_speed
