@@ -97,5 +97,6 @@ while True:
 </details>
 
 
-If you got all of this to work, do your best Dr. Evil laugh at a volume that the instructors are sure to hear!  It's finally time for some sharks with some lasers on their heads.
+If you got all of this to work, do your best Dr. Evil laugh at a volume that the instructors are sure to hear!
+It's finally time for some sharks with some lasers on their heads.
 
