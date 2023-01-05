@@ -14,9 +14,6 @@ In this part 2 of 3 for our final game you will do the following:
 
 ## What to do
 
-First of all stand up and walk over to pick up your shark!  Good time for a stretch, eh?
-
-
 TODO: Insert diagram here of breadboard with servo and 3 LEDs added
 
 ![Game Part 2 Diagram](/images/needanimagehere.png)
@@ -38,15 +35,10 @@ After this code is run and your servo adjusts to 90, place the servo into the en
 
 ##  Get your hands dirty
 
-Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on your code from the Fire Zee Lasers Lab.
+Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on our code from the Fire Zee Lasers Lab.
 
-TODO: List some specific code snippets from previous labs to help guide them
-
-
-**NOTE**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
+**Code!**<details><summary>If you've given that a good effort and need a little guidance check out the code solution by clicking here.</summary> 
 ```Python
-
-
 
 
 from machine import Pin,PWM,ADC
@@ -75,7 +67,6 @@ laser = Pin(20, Pin.OUT)
 laser.value(0)
 
 button = Pin(17, Pin.IN, Pin.PULL_DOWN)
-
 
 # Initialize Servo
 sg90.servo_pin(15)
@@ -190,9 +181,4 @@ while True:
 
 
 
-
 If you made it this far, stand up, stretch, and give someone a fist bump!
-
-
-## References:
-
