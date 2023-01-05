@@ -18,7 +18,7 @@ TODO: Insert diagram here of breadboard with servo and 3 LEDs added
 
 ![Game Part 2 Diagram](/images/needanimagehere.png)
 
-![Game Stage Illustration](/images/needanimagehere.png)
+![Game Stage Illustration](/images/gamestage.png)
 
 ## Setting a home direction for the laser
 
