@@ -8,7 +8,7 @@ In this part 1 of 3 for our final game you will do the following:
 
 - Wire the photo resistor through the two little holes in the middle of your target and place the target end cap on one end of the ruler with the photo resistor side facing towards the rest of the ruler
 - Detect a button press (use various button labs as a reference)... if this happens the pico should FIRE ZEE LASER at the photoresistor (our target).
-- You then need to read the current value of the photoresistor to see if your scored a "hit", that is did the value of the photoresistor change dramatically when the laser was shining on it.
+- You then need to read the current value of the photoresistor to see if you scored a "hit", that is did the value of the photoresistor change dramatically when the laser was shining on it.
 - Once the button has been pressed we need to lock out the player from another attempt for 5 seconds (use debounce lab as a reference)
 
   
@@ -23,7 +23,7 @@ Put the photo resistor legs through the two holes in the center of the target.  
 ![Target Pic Front](/images/target_full.jpg)
 
 
-Note: This is your first time playing with a laser in our lab, it hooks up just like an LED!
+Note: This is your first time playing with a laser in our lab, it hooks up just like an LED! The Red wire on the laser is positive and the blue wire is negative/ground.
 
 
 Here is the wiring diagram:  
