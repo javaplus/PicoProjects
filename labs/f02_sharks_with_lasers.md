@@ -27,27 +27,38 @@ Now install the servo **upside down** into the shark (image below).  The wires f
 
 ### Setting a home direction for the laser
 
-**BEFORE** snapping the servo onto the base, run the following code in the shell of Thonny to allow us to set a "home" for the laser.
+**BEFORE** snapping the servo onto the base, run the following code in the shell of Thonny to allow us to set a "home" for the shark and align the laser.
 
 ```Python
 import sg90
 
 sg90.servo_pin(15)
 sg90.move_to(90)
+
 ```
 
-After this code is run and your servo adjusts to 90, place the servo into the end cap on the ruler.
+After this code is run and your servo adjusts to 90, place the servo into the end cap on the ruler. Pointing straight towards your target at the other end.  
 
 ![Shark Side](/images/shark_side.jpg)
 
+After snapping the shark servo onto the base and sliding it on the ruler, we can aim the laser.  So, connect the laser back up with the red wire going to GP20 and the blue wire to ground.  Once connected run this code in the terminal to turn on the  laser.
 
-### Shark and Target Setup:
+```Python
+from machine import Pin
+
+laser = Pin(20, Pin.OUT)
+laser.value(1)
+
+```
+
+Your setup should look like this now with the laser on and hitting the target:  
 
 ![Game Stage Illustration](/images/gamestage.png)
 
-## Wiring to the Pico
+With the laser on, adjust it up and down to hit the center line of the target.  The laser doesn't need to hit the bullseye(photoresistor) directly at this time.  The laser just needs to hit at the same height as the bullseye.  For our game, the shark will rotate back and forth and you will have to stop the shark and "fire" the laser at the right time to hit the bullseye. So, at this time just make sure the laser is not hitting high or low... left and right of the bullseye is ok if it's at the same height as the bullseye.
 
-Once you have the shark with the servo and laser as well as the target installed on the ruler/paint stick, you are ready to wire it all upto the breadboard.
+
+## Wiring to the Pico
 
  Here is the wiring diagram with the additions for this lab. **NOTE** The top half of the diagram remains the same from the last lab.  The additions are all on the bottom half of the breadboard with the exception of the wires connecting the 3 LEDS to the Pico cross over the top half of the breadboard to the Pico's GP pins (GP19,GP18, and GP17).  
 
