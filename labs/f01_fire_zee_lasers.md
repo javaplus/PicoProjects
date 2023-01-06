@@ -7,7 +7,8 @@ You are now well prepared for our final objective.  What's a mad scientist pre-c
 In this part 1 of 3 for our final game you will do the following:
 
 - Wire the photo resistor through the two little holes in the middle of your target and place the target end cap on one end of the ruler with the photo resistor side facing towards the rest of the ruler
-- Detect a button press (use various button labs as a reference)... if this happens the pico should FIRE ZEE LASER and the photores (our target) needs to read the current value (use various button labs as a reference).
+- Detect a button press (use various button labs as a reference)... if this happens the pico should FIRE ZEE LASER at the photoresistor (our target).
+- You then need to read the current value of the photoresistor to see if your scored a "hit", that is did the value of the photoresistor change dramatically when the laser was shining on it.
 - Once the button has been pressed we need to lock out the player from another attempt for 5 seconds (use debounce lab as a reference)
 
   
@@ -31,6 +32,9 @@ Here is the wiring diagram:
 
 
 Once you have the pico wired, take some time to attempt to code the points outlined in the overview using the old labs.
+
+For coding the photoresistor, if you remove the **conversion_factor** we used in our lab, you will have a wide range of values. That is close to zero when there is no light, and close to 65535 under a super bright light.  This will give you a wide range to detect "normal" light conditions verses when the laser is shining directly on the photoresistor.
+**WARNING** When working with the laser, DON'T SHOOT YOUR EYE OUT! Or anyone elses. :)
 
 If you've given that a good effort and need a little guidance check out the code solution by clicking on the link below: 
 
