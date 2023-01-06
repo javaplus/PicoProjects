@@ -14,15 +14,20 @@ In this part 2 of 3 for our final game you will do the following:
 
 ## What to do
 
-TODO: Insert diagram here of breadboard with servo and 3 LEDs added
+### Set up the Shark:
 
-![Game Part 2 Diagram](/images/needanimagehere.png)
+Install the laser into the shark head.  You will have to disconnect your laser (the short wires) from the male-to-female wires to feed the laser wires down through the hole in the top of the shark head.  Once the laser wires come out the bottom of the shark, reconnect them to the female ends of the male-to-female wires that go to the breadboard.
 
-![Game Stage Illustration](/images/gamestage.png)
+Now install the servo **upside down** into the shark (image below).  The wires for the laser and the wires for the servo, should go towards the front of the shark.  There is a notch in the bottom of the shark model under the hole for the laser wires that should allow the laser wires and the servo wires to not get in the way of pushing the servo up into the shark.
+#### Bottom side of Shark:
+![Shark Bottom](/images/shark_bottom.jpg)  
 
-## Setting a home direction for the laser
+**NOTE** If the servo isn't snug in the bottom of the shark you can add some tape around the base of the servo which goes up into the shark to make it fit nice and tight.
 
-Run the following code in the shell of Thonny to allow us to set a "home" for the laser.
+
+### Setting a home direction for the laser
+
+**BEFORE** snapping the servo onto the base, run the following code in the shell of Thonny to allow us to set a "home" for the laser.
 
 ```Python
 import sg90
@@ -32,6 +37,22 @@ sg90.move_to(90)
 ```
 
 After this code is run and your servo adjusts to 90, place the servo into the end cap on the ruler.
+
+![Shark Side](/images/shark_side.jpg)
+
+
+### Shark and Target Setup:
+
+![Game Stage Illustration](/images/gamestage.png)
+
+## Wiring to the Pico
+
+Once you have the shark with the servo and laser as well as the target installed on the ruler/paint stick, you are ready to wire it all upto the breadboard.
+
+ Here is the wiring diagram with the additions for this lab. **NOTE** The top half of the diagram remains the same from the last lab.  The additions are all on the bottom half of the breadboard with the exception of the wires connecting the 3 LEDS to the Pico cross over the top half of the breadboard to the Pico's GP pins (GP19,GP18, and GP17).  
+
+![Game Part 2 Diagram](/images/game_2_lab_bb.png)
+
 
 ##  Get your hands dirty
 
