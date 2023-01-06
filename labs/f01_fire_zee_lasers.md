@@ -13,6 +13,14 @@ In this part 1 of 3 for our final game you will do the following:
   
  ## What to do
 
+### Build the Target:
+
+Take the photo resistor legs through the two holes in the center of the target.  The legs should come out the back flat side of the target. On the backside of the target, spread the legs away from each other and then bend them towards the front of the target around the target legs as seen in the picture below. This keeps the legs from touching each other and helps hold the photoresistor snugly in the target.  Connect female ends of male to female wires to the legs of the photoresistor.
+
+![Target Pic Front](/images/target_zoom.jpg)
+![Target Pic Back](/images/target_back.jpg)
+![Target Pic Front](/images/target_full.jpg)
+
 TODO: Insert diagram here of breadboard with button, laser, andd photores connected
 
 ![Game Part 1 Diagram](/images/needanimagehere.png)
