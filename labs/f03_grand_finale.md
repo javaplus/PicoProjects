@@ -17,11 +17,12 @@ In this grand finale for our game you will do the following:
 
 ## What to do
 
-TODO: Insert final diagram here with everything setup
+Here is the wiring diagram for the last stage of the game.  The new additions are the black buzzer in the bottom right corner of the breadboard and the 7 segment display on the far left of the diagram.  Those are the only 2 new things you need to wire up.  In the picture below, you will see the photoresistor has moved just to make the picture smaller, but the wiring for it has not changed.
 
-![Game Finale Diagram](/images/needanimagehere.png)
+The Buzzer's positive side connects to GP9 on the Pico (column 12 on the bottom) and then the negative side to ground.  The 7 segment display connects to GP0 and GP1 (column 1 and 2 on the bottom) and also connects to the 5V positive rail and ground.  
 
-![Game Stage Illustration](/images/gamestage.png)
+![Game Finale Diagram](/images/game_3_lab_bb.png)
+
 
 Once you have the pico wired and the game stage set as seen above, take some time to attempt to code the points outlined in the overview using the old labs, building on our code from the Sharks With Laser Beams lab.
 
