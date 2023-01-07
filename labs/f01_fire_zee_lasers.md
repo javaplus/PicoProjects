@@ -48,9 +48,6 @@ import utime
 
 photoresistor_value = machine.ADC(28)
 
-initial_photo_reading = photoresistor_value.read_u16()
-print("Initial Laser Voltage Reading: ", initial_photo_reading)
-
 laser = Pin(20, Pin.OUT)
 laser.value(0)
 
