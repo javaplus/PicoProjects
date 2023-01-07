@@ -80,9 +80,6 @@ import utime, sg90, _thread, tm1637, sys
 
 photoresistor_value = machine.ADC(28)
 
-initial_photo_reading = photoresistor_value.read_u16()
-print("Initial Laser Voltage Reading: ", initial_photo_reading)
-
 # Initialize LEDs to on at beginning
 # These LEDs indicate lives remaining
 led1 = Pin(16, Pin.OUT)
