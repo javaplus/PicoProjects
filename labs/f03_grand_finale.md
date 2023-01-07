@@ -38,13 +38,6 @@ import utime, sg90, _thread, tm1637, sys
 
 photoresistor_value = machine.ADC(28)
 
-initial_photo_reading = photoresistor_value.read_u16()
-print("Initial Laser Voltage Reading: ", initial_photo_reading)
-
-# target will recognize a hit when there is a 20% increase in light
-target_reading = initial_photo_reading * 1.2   # potentially need a different percentage based on laser and photores being used
-print("Target Goal Lighting: ", target_reading)
-
 # Initialize LEDs to on at beginning
 # These LEDs indicate lives remaining
 led1 = Pin(16, Pin.OUT)
@@ -85,6 +78,13 @@ DEBOUNCE_utime = 5000
 # debounce counter is our counter from the last button press
 # initialize to current utime
 debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
+
+initial_photo_reading = photoresistor_value.read_u16()
+print("Initial Laser Voltage Reading: ", initial_photo_reading)
+
+# target will recognize a hit when there is a 20% increase in light
+target_reading = initial_photo_reading * 1.2   # potentially need a different percentage based on laser and photores being used
+print("Target Goal Lighting: ", target_reading)
        
 def scan(servo):
     stepping = servo_speed
@@ -232,6 +232,8 @@ def end_of_game_buzz():
         utime.sleep_ms(100)  
         
     buzzer.duty_u16(0)
+
+
 
 
 # Below executes in the main(first) thread.
