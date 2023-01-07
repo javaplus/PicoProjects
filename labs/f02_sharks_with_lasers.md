@@ -28,6 +28,7 @@ Now install the servo **upside down** into the shark (image below).  The wires f
 
 ### Setting a home direction for the laser
 
+Now connect the servo's power wire(red middle) to the 5volt rail. Connect the servo's ground wire (dark brown) to any ground(-) rail.  Connect the orange/yellowish signal wire of the servo to GP15 which is Column 20 on the bottom side of the Pico. If need be, reference the [wiring diagram](#wiring-to-the-pico) further down the page.  
 **BEFORE** snapping the servo onto the base, run the following code in the shell of Thonny to allow us to set a "home" for the shark and align the laser.
 
 ```Python
