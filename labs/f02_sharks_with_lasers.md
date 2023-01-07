@@ -11,6 +11,7 @@ In this part 2 of 3 for our final game you will do the following:
 - Add code that will pan our servo back and forth (in its own thread)
 - Add code to manage the lighting of 3 LEDs.  Each LED will represent a "life" during our game.  They should all be turned on by default.
 - Create a function that will turn off one of the remaining lit LEDs.  We will use this later on in lab F03 when we determine that we missed one of our laser shots.
+- Within your scan method you should have a way to detect if the laser has been fired (button was pressed). The servo should stop moving when this happens.  (Hint: implement a global kill_flag)
 
 ## What to do
 
