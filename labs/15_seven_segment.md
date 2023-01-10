@@ -76,4 +76,6 @@ If it works, display your biggest grin on your face!
 
 ## References:
 
+[Repo for TM1637](https://github.com/mcauser/micropython-tm1637)
+
 [Test Library for TM1637 from MCAUSER](https://raw.githubusercontent.com/mcauser/micropython-tm1637/master/tm1637_test.py)
