@@ -10,3 +10,7 @@ Ground pins are the 3rd pin from each end on each side. There are also two other
 So, use the image below as a reference to know the GPIO pin numbers.  In the code you will use the number after the "GP" label.
 
 ![Pico Pinout](https://www.circuitgeeks.com/wp-content/uploads/2021/06/Raspberry-Pi-Pico-Pinout.png)
+
+
+### This image is rotated in the orientation of all the labs.
+![Pico Sideways](/images/Rasbnerry-Pi-Pico-Pinout-1-sideways.png)
