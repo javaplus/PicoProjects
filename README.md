@@ -103,6 +103,22 @@ Seven Segment Display:
 
 
 ## References:
+  #### Parts List
+  - Pico, Pico H, or Pico W (Pico H is less work since it has pins soldered already)
+  - Breadboard
+  - Jumper Wires
+  - LEDs
+  - Button (push button switch)
+  - micro USB cable
+  - Active Buzzer
+  - Photoresistor(5528, but others would work)
+  - Resistors(220 Ohm, 10K Ohm) 2 of each
+  - sg90 type mini servo
+  - 10K Ohm Trim Potentiometer
+  - 3D printed parts for final 3 game labs & paint stirring stick.[Models](https://github.com/javaplus/PicoProjects/tree/main/models)
+
+[Spreadsheet with Links where I ordered most parts](https://docs.google.com/spreadsheets/d/19XlUfh7XKboxZuTpR78YdXvtKbAR8O2FZtGRgrgSMsw/edit?usp=sharing)
+
   #### Python:
   - [While loops](https://www.geeksforgeeks.org/python-while-loop/)
   - [for loops](https://www.geeksforgeeks.org/python-for-loops/)
