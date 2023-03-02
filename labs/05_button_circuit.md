@@ -6,7 +6,7 @@ Now we will show how to use a simple button or momentary switch to keep the circ
 
 ## How a Switch Works
 
-A button or switch is simply a way to close a circuit (allow electricity to flow) with a mechanical device.  The easiest way to think of a button or switch is just a piece of metal that connects two leads.  See the picture below:
+A button or switch is simply a way to close a circuit (allow electricity to flow) with a mechanical device.  The easiest way to think of a button or switch is just a piece of metal that connects two leads(wires).  See the picture below:
 
 ##### Open Circuit Image
 ![Switch Circuit Off](/images/switch_circuit.png)
