@@ -61,6 +61,7 @@ Finally, we will use code to light up LEDs:
 Use the Pico to detect when a button is pressed.  
 [Lab 8](/labs/08_button_control.md)  
 [Lab 9](/labs/09_button_debounce.md)  
+[Optional Game - Reaction Time Lab 16](/labs/16_button_led_reaction_time)  
 [Lab 10](/labs/10_button_interrupt.md)  
 
 
