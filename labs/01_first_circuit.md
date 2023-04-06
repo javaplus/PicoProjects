@@ -7,7 +7,7 @@ The first circuit we will build will be to power a simple light (LED).
 
 ![Basic Circuit](/images/Circuit.png)
 
-An important part of a working circuit is to make sure the circuit is complete or closed.  That is that there is a connection from the battery or power sources positive terminal through the light and to the ground(negative).  Electricity flows from the positve terminal to the ground(negative) and if there is a break or disconnect in the circuit then the circuit is "open" and therefore no electrcity is flowing and your light won't shine.
+An important part of a working circuit is to make sure the circuit is complete or closed.  That is when there is a connection from the battery or power sources positive terminal through the light and to the ground(negative).  Electricity flows from the positive terminal to the ground(negative) and if there is a break or disconnect in the circuit then the circuit is "open" and therefore no electricity is flowing and your light won't shine.
 
 ## What we will build
 
