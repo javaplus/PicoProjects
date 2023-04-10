@@ -23,9 +23,14 @@ Then add the photoresistor with one leg into column 35 and the other leg in colu
 
 Now connect the leg of the photoresistor in column 35(left leg) to the pin on the Pico in Column 7, Row I or J (this is our ADC pin).  Now connect that same leg of the photoresistor in column 35 to ground with a 10K resistor.
 
+Resistors are identified by the pattern of their color bands, some have 4 bands and others have 5. For 10k resistors:
+| 4 Band Color Pattern | 5 Band Color Pattern |
+| --- | --- |
+| Brown-Black-Orange-Gold | Brown-Black-Black-Red-Gold |
+
 <details>
 <summary> Want to read why need the 10K resistor, expand this.</summary>
-The 10K resistor is needed to create what's called a <a href="https://learn.sparkfun.com/tutorials/voltage-dividers">voltage divider</a>.  I'd like to explain exactly what that means, but I can't... I'm an electronics noob.  But I think the way it works is that the voltage divider causes a disturbance in the force by disrupting the <a href="https://starwars.fandom.com/wiki/Midi-chlorian">midi-chlorian</a> flow and therefore causes the <a href="https://www.dictionary.com/e/fictional-characters/flux-capacitor/">flux capacitor</a> to emit a lesser charge through the <a href="https://ghostbusters.fandom.com/wiki/Proton_Pack">proton pack</a> than it normally would. If you are more confused after reading my  nonsensical description, then you understand as much about voltage dividers as I do.  <br><b>Seriously though, the 10K resistor in parallel with the photoresistor allows us to get a wide range of values when reading the resistance.</b> Here's a good article that goes into more detail: <a href="(https://learn.sparkfun.com/tutorials/voltage-dividers">Spark Fun Voltage Dividers</a>
+The 10K resistor is needed to create what's called a <a href="https://learn.sparkfun.com/tutorials/voltage-dividers">voltage divider</a>.  I'd like to explain exactly what that means, but I can't... I'm an electronics noob.  But I think the way it works is that the voltage divider causes a disturbance in the force by disrupting the <a href="https://starwars.fandom.com/wiki/Midi-chlorian">midi-chlorian</a> flow and therefore causes the <a href="https://www.dictionary.com/e/fictional-characters/flux-capacitor/">flux capacitor</a> to emit a lesser charge through the <a href="https://ghostbusters.fandom.com/wiki/Proton_Pack">proton pack</a> than it normally would. If you are more confused after reading my  nonsensical description, then you understand as much about voltage dividers as I do.  <br><b>Seriously though, the 10K resistor in parallel with the photoresistor allows us to get a wide range of values when reading the resistance.</b> Here's a good article that goes into more detail: <a href="https://learn.sparkfun.com/tutorials/voltage-dividers">Spark Fun Voltage Dividers</a>
 </details>
   
   
