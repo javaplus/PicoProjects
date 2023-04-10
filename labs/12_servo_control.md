@@ -39,7 +39,7 @@ Connect a black wire from one of the Pico's bottm ground pins to the bottom nega
 With the bottom power rails connected to the Pico, now wire up the servo.  Use a male to male wire to connect the brown servo wire to the ground rail(negative) on the breadboard.  
 Use a wire to connect the servo's red wire to the bottom positive rail.
 
-Use another wire to connnect the servo's orange wire to GPIO 15 on the Pico which can be found in column 20 at the bottom( orange wire connected to column 20, Row B in the picture below).
+Use another wire to connect the servo's orange wire to GPIO 15 on the Pico which can be found in column 20 at the bottom( orange wire connected to column 20, Row B in the picture below).
 
 ![Servo Diagram](/images/12_servo_pico_bb.png)
 
