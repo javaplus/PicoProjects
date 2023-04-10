@@ -46,7 +46,7 @@ Use another wire to connect the servo's orange wire to GPIO 15 on the Pico which
 
 Once you have the pico wired, we need to write the code to control the servo.
 
-To begin with our code will simply move the servo to the center, then rotate 90 degrees in one direction and the rotate to the opposite extreme (180 degrees in the opposite direction).
+To begin with our code will simply move the servo to the center, then rotate 90 degrees in one direction and then rotate to the opposite extreme (180 degrees in the opposite direction).
 
 To make your code with the servo simple, I've created a library that you can simply copy to your pico and import into your program.
 
