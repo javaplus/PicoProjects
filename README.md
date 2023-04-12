@@ -14,6 +14,10 @@ If you want to get a little familar with Python before coming you can check out 
 [Python Tutorial](https://www.learnpython.org/)
 
 
+## Are you Running a Hackathon
+
+If you are using this as part of a Hackathon or contest, check out our [Hackathon Guide](/reference/breadboards.md).
+
 ## Overview 
 
 We start with a basic introduction to circuits and some basic electronics. So, the first several labs only use the Pico as a power source to introduce basic circuits and some electronic components we will be working with.  Without this foundational knowledge, it will be difficult to build useful solutions that integrate code and electronics.
