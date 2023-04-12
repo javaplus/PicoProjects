@@ -16,7 +16,7 @@ If you want to get a little familar with Python before coming you can check out 
 
 ## Are you Running a Hackathon
 
-If you are using this as part of a Hackathon or contest, check out our [Hackathon Guide](/reference/breadboards.md).
+If you are using this as part of a Hackathon or contest, check out our [Hackathon Guide](/reference/hackathon.md).
 
 ## Overview 
 
