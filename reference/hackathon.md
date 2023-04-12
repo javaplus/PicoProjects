@@ -16,6 +16,8 @@
 
 
 ## Judging
-1) After completing each of the final labs, reach out to a judge to have them check your work and give you credit for what you've done.
-1) On the scorecard for innovation, the last item mentions adding a previously unused hardware component to the final solution.  You should be given one point for **each** additional hardware component added. For example, adding two new buttons that provide new features, could gain you two points.
-
+1) You will be judged on team work, working prototypes of our games, innovations on the prototype, and presentations.
+2) The largest amount of points available are in the working prototypes and working innovated features with a total of 10 points in each section.  
+3) Team work is worth up to 3 points and Presenations are a max of 5 points for awesome presentations.
+4) Your work on the prototype will be judged as you get parts of it completed. So after completing each of the final labs, reach out to a judge to have them check your work and give you credit for what you've done.
+5) On the scorecard for innovation, the last item mentions adding a previously unused hardware component to the final solution.  You should be given one point for **each** additional hardware component added. For example, adding two new buttons that provide new features, could gain you two points.  If those buttons also required feature providing code for them to work, that could be additional points for added code module/function/feature.
