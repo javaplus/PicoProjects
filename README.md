@@ -26,7 +26,11 @@ If you aren't familar with how to use a breadboard, please take a moment and loo
 
 **NOTE on LABS**  
 We provide working code for each lab, but you are welcome to try to code some of the stretch goals or solutions on your own once you get the hang of things.  
+
+Many of the labs reference specific columns and rows to use when plugging in electronics.  This is just to make it easier for beginners.  The exact column and rows do not matter if you already understand how a breadboard works and know how to complete the circuit.  If this is all brand new to this, you should follow our instructions exactly. But just know as you learn more about breadboards and circuits the exact location you plug things into the breadboard in many of the labs aren't important if you still complete the circuit.
+
 If you finish a lab quickly and see others that are struggling, **your stretch goal is to help a neighbor!**
+
 
 ## Intro to Circuits.
 
