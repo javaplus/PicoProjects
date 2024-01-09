@@ -31,6 +31,7 @@ It will be easiest if you orient your breadboard as seen below in the [wiring di
 The USB connection should be to the left and on the left edge of the breadboard you should see letters A through J going from the bottom up with J being at the top.  Across the breadboard left to right you should see numbers indicating the columns of pins starting at 1 and then counting by 5's across the board.
 
 
+**NOTE** If you recieved a kit for these labs, the ground and positive wires may already be placed for you. 
 ##### Ground (negative)
 
 We will start by connecting one of the ground pins on the Pico to the top ground(-) rail of the breadboard.  To do this run a black wire from Pin 3 in Row I or J to the negative rail(ground) on the bread board.  
