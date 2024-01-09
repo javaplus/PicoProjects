@@ -21,7 +21,7 @@ Since we are barely over spec with our Blue LED we most likely won't have an iss
 
  Resistance is measured in Ohms.  The higher the Ohms the more resistance.  You should have at least 2 resistors in your kit.  We will try them both to determine which has the most resistance.
 
- Resistors as seen in the image below have two legs. These legs are not polarized... meaning it doesn't matter which leg plugs into what part of the circuit.  as long as the legs are used to complete a circuite the body in the middle will resist the flow of electron flow.
+ Resistors as seen in the image below have two legs. These legs are not polarized... meaning it doesn't matter which leg plugs into what part of the circuit.  as long as the legs are used to complete a circuit, the body in the middle will resist the flow of electron flow.
 
 ###### Resistor
 ![Resistor image](/images/resistor.png)
@@ -39,4 +39,7 @@ Swap out the resistor with another one in your kit and see if it gets even dimme
 
 If it works pat yourself on the back.
 
+### More Information
+
+While we tried to figure out which resistor had more resistance by just trying it in a circuit with an LED, it's typically required to KNOW the amount of resistance needed in your circuit and then choose the correct resistor. If you don't know the value of a resistor, you can use a Volt Meter set to the Ohms setting to test.  This is the easiest way.  You can also use the color bands on the resistors to determine the resistance level. This can be complicated as some colors are hard to distinguish, but there is a neat resistor calculator that allows you to enter the color bands to tell you the resistance: [Resistor Calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code) 
 ![Resistor Circuit](/images/2_Circuit_bb.png)
