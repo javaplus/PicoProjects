@@ -44,3 +44,5 @@ If it works pat yourself on the back.
 ### More Information
 
 While we tried to figure out which resistor had more resistance by just trying it in a circuit with an LED, it's typically required to KNOW the amount of resistance needed in your circuit and then choose the correct resistor. If you don't know the value of a resistor, you can use a Volt Meter set to the Ohms setting to read the exact Ohms level for the resistor.  This is the easiest way.  You can also use the color bands on the resistors to determine the resistance level. This can be complicated as some colors are hard to distinguish, but there is a neat resistor calculator that allows you to enter the color bands to tell you the resistance: [Resistor Calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code) 
+
+Another resistor calculator and explanation of the color bands: [Resistor Calculator and Description](https://www.utmel.com/tools/band-resistor-color-code-calculator?id=20)
