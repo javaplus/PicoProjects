@@ -32,7 +32,7 @@ If having issues connecting see if this detailed guide helps:
 [Detailed guide for connecting Pico to Thonny](https://microcontrollerslab.com/getting-started-raspberry-pi-pico-thonny-ide/)
 
 
-It it's able to connect, you should see the print out in the shell like in the picture above that tells you the version of MicroPython running on the Pico.
+If it's able to connect, you should see the print out in the shell like in the picture above that tells you the version of MicroPython running on the Pico.
 The shell below is a [REPL](https://pythonprogramminglanguage.com/repl/) where you could type Python statements have them executed immeditately.  We are not going to use the shell.  Instead, we will type our code into the text editor area above the shell.
 
 Here is the obligatory blink demo for the Pico:
