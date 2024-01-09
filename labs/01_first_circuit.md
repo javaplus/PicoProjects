@@ -60,7 +60,7 @@ It's important to always make sure you have a closed circuit... that is does the
 Get used to always visually tracing this flow through your breadboard to make sure you verify the circuit is closed.  An open circuit means electricity can't flow and nothing will work.
 
 ## Wiring Diagram
-(*NOTE*)If you recieved a kit for these labs, there may be extra wires on your breadboard to provide power to the bottom power rails of the breadboard.  Don't remove these wires, just add the LED.
+(*NOTE*)If you recieved a kit for these labs, there may be extra wires on your breadboard to provide power to the bottom power rails of the breadboard.  Don't remove these wires, just add the two wires and the LED to the right of the Pico.
 
 ![Basic LED Wiring Diagram](/images/1_Circuit_bb.png)
 
