@@ -12,7 +12,7 @@ A Photoresistor(pictured below) is a type of variable resistor that provides som
 
  ## What to do
 
-For this lab, we will simply replace the resistor in our circuit with our photoresistor.  So simple remove the resistor that connects the long side of the LED currently in column 30 to the power rail. Now add the photoresistor in place of it.  Connect one side of the photoresistor leg to Column 30 and the other side to the positive power rail.  The legs of the photoresistor can go either way.
+For this lab, we will simply replace the resistor in our circuit with our photoresistor.  So simply remove the resistor that connects the long side of the LED currently in column 30 to the power rail. Now add the photoresistor in place of it.  Connect one side of the photoresistor leg to Column 30 and the other side to the positive power rail.  The legs of the photoresistor can go either way.
 
 Once you have the photo resistor in place, try covering the photoresistor with your finger and see if the light dims.  Then remove your finger from the top of the photoresistor and see if the LED brightens.  
 
