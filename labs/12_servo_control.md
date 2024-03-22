@@ -59,26 +59,26 @@ Once you have the **sg90.py** library saved to your Pico, open a new file/tab (C
 Here's the code:
 
 ``` Python
-import sg90
+from sg90 import servo
 import utime
 
-# initialize the signal Pin
-sg90.servo_pin(15)
+# initialize with the Pin you are using
+servo1 = servo(15)
 
 #Center
-sg90.move_to(90)
+servo1.move_to(90)
 utime.sleep_ms(1000)
 
 #move_to to one extreme
-sg90.move_to(0)
+servo1.move_to(0)
 utime.sleep_ms(1000)
 
 #move_to to other extreme
-sg90.move_to(180)
+servo1.move_to(180)
 utime.sleep_ms(1000)
 
 #Center
-sg90.move_to(90)
+servo1.move_to(90)
     
 ```
 
