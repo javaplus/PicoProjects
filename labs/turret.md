@@ -1,11 +1,14 @@
 # Turret!
 
-Now that you know the basics of a joystick we will make it control a servo!  
+Now that you know the basics of a joystick we will make it control a turret made of servos!  
 
-Before we start with the code we have to wire our turret in.
+Before we start with the code we have to wire our turret in. 
+
+![turretDiagram](https://github.com/javaplus/PicoProjects/blob/main/images/turret6_bb.png?raw=true)
 
 
- first we will import a library for it to function we will name it turret.py
+
+ then we will import a library for it to function, let's will name it turret.py
 
  ```python
 from machine import Pin, ADC
@@ -54,18 +57,23 @@ xAxis = ADC(Pin(27))
 yAxis = ADC(Pin(26))
 button = Pin(17,Pin.IN, Pin.PULL_UP)
 
+#turret(servoXpin, servoYpin)
 myturret = turret(15,14)
+
+#centering the servos
 myturret.servo_horiz.move_to(90)
 myturret.servo_vert.move_to(90)
+
 while True:
     xValue = xAxis.read_u16()
     yValue = yAxis.read_u16()
     buttonValue = button.value()
-    
+
     if buttonValue == 0:
         myturret.servo_horiz.move_to(90)
         myturret.servo_vert.move_to(90)
-        
+
+#myturret.move_(direction)(movement_speed)
     if xValue <= 600:
         myturret.move_right(5)
    
@@ -81,3 +89,4 @@ while True:
     utime.sleep_ms(SMOOTH_TIME)           
 ```
 
+  What we're doing here is calling functions in the turret library to make the turrets move.
