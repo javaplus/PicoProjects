@@ -1,14 +1,14 @@
 # Turret!
 
-Now that you know the basics of a joystick we will make it control a turret made of servos!  
+Now that you know the basics of a joystick, we will make it control a turret made of servos!  
 
-Before we start with the code we have to wire our turret in. 
+Before we start with the code, we have to wire our turret in. 
 
 ![turretDiagram](https://github.com/javaplus/PicoProjects/blob/main/images/turret6_bb.png?raw=true)
 
 
 
- then we will import a library for it to function, let's will name it turret.py
+ We will then import a library for it to function. Let's will name it turret.py
 
  ```python
 from machine import Pin, ADC
@@ -42,8 +42,8 @@ class turret:
             self.servo_vert.move_to(self.servo_vert.position - speed)
  ```
 
-this library will allow the servo to easily move! Now we got our library lets make the code. If you don't have the [SG90 Library](https://raw.githubusercontent.com/javaplus/PicoProjects/main/servos/sg90.py) already go ahead and add it to a seperate file and name it sg90.
-Now that you have the sg90 library it will allow us to control the servo, now we can start!
+In this library we are making a class and functions for servo movement. This will help us easily move the servos without much knowledge about servos and joysticks. Defining the servos in our main code will give tell the library what servos to use. Now that we have our library, let's make the code. If you don't have the [SG90 Library](https://raw.githubusercontent.com/javaplus/PicoProjects/main/servos/sg90.py) already, go ahead and add it to a seperate file and name it sg90.
+Now that you have the sg90 library, it will allow us to control the servo. Now we can start!
 
 ```python
 from machine import Pin, ADC
