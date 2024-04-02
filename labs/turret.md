@@ -23,6 +23,10 @@ class turret:
     def __init__(self, horizontal_servo_pin, vertical_servo_pin):
         self.servo_horiz = servo(horizontal_servo_pin)
         self.servo_vert = servo(vertical_servo_pin)
+        
+    def center(self):
+        self.servo_horiz.move_to(90)
+        self.servo_vert.move_to(90)
     
     # positive speed moves one direction and negative moves the other
     def move_left(self, speed):
@@ -60,18 +64,14 @@ button = Pin(17,Pin.IN, Pin.PULL_UP)
 #turret(servoXpin, servoYpin)
 myturret = turret(15,14)
 
-#centering the servos
-myturret.servo_horiz.move_to(90)
-myturret.servo_vert.move_to(90)
-
 while True:
     xValue = xAxis.read_u16()
     yValue = yAxis.read_u16()
     buttonValue = button.value()
 
+#recenters both servos
     if buttonValue == 0:
-        myturret.servo_horiz.move_to(90)
-        myturret.servo_vert.move_to(90)
+        myturret.center()
 
 #myturret.move_(direction)(movement_speed)
     if xValue <= 600:
