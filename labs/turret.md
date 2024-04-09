@@ -52,10 +52,9 @@ Now that you have the sg90 library, it will allow us to control the servo. Now w
 ```python
 from machine import Pin, ADC
 import utime
-from sg90 import servo
 from turret import turret
 
-SMOOTH_TIME = (20)
+SMOOTH_TIME = (60)
 
 xAxis = ADC(Pin(27))
 yAxis = ADC(Pin(26))
@@ -73,17 +72,18 @@ while True:
     if buttonValue == 0:
         myturret.center()
 
+#Adjust x and y values based on sensitivity of your joystick
 #myturret.move_(direction)(movement_speed)
-    if xValue <= 600:
+    if xValue <= 48000:
         myturret.move_right(5)
    
-    if xValue >= 65000:
+    if xValue >= 54000:
         myturret.move_left(5)
          
-    if yValue <=600:
+    if yValue <=46500:
         myturret.move_up(5)
         
-    if yValue >= 65000:
+    if yValue >= 54000:
         myturret.move_down(5)
         
     utime.sleep_ms(SMOOTH_TIME)           
