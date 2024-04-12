@@ -11,11 +11,12 @@
 
 ## Getting started!
 
-The controller will have 5 pins: 5v, ground, vrx(voltage proportional to X axis), vry(voltage proportional to y axis) and sw(switch). We will need to use the 5v on the pico to power a rail, then after that connect 
+The joystick for this lab uses potentiometers internally and can detect movement in the x axis, the why axis, and can detect when the joystick is pushed in like a button. 
+ The joystick will have 5 pins: 5v, ground, vrx(voltage proportional to X axis), vry(voltage proportional to y axis) and sw(switch). We will need to use the 5v on the pico to power a rail, then after that connect 
 the ground pin. Now let's connect the vrx, switch, and vry. Vrx will go in GPIO pin 27, Switch in GPIO pin 17 and vry in GPIO pin 26 like shown in the picture.  
 ![JoystickDiagram](https://github.com/javaplus/PicoProjects/blob/main/images/joystick%202_bb.png?raw=true)  
 
-Now that we have it wired in, we can now write the code to have it function. This code will tell you the position of your joystick!
+Now that we have it wired in, we can now write the code that will read the joysticks input and print out the values based on it's motion. Now let's code this puppy up!
 
 ```python
 #code from https://www.youtube.com/watch?v=SJr-HoCwlWg
@@ -41,8 +42,19 @@ while True:
     utime.sleep(0.2)
 
 ```
+Now try running the code above. You should see a steady stream of statements in the console telling you the x and y values as well as if the joystick is pressed.
+Increase the value passed to `utime.sleep()` if you want the print statements less frequent, but understand this will mean that the position of your joystick will be read less often.
 
-The code reads and prints the position of the joystick using a value with the axis; right = x60000 position, left x600, up y600 and down y60000.
+Notice the x and y values as the code runs and you move the joystick around.  
+**NOTE** Most cheap joysticks like the one you probably have may have a dead zone around the center or even worse "freak out" when the joystick is pushed to its max range in some directions.  We've noticed that most of the cheaper joysticks when pushed to the extent of their movement in one direction will often falsely show an extreme movement on the other axis as well.  That is if you push the joystick full left, it will also show the the joystick is pulled down even if their is now downward movement on the joystick.  So, the key understanding here is that electronics can have flaws in them and a lot of cheap electronics don't always work as advertised.  So, when running the simple code above watch the values closely and understand the max ranges and sensitivity of your particular joystick.  This will help you better write code to handle any peculiarities it may have.
+
+## Detecting Direction
+
+Now let's modify the code slightly by checking the x and y values to try to determine the direction of the joystick.  That is we will use the values we read to determine if the joystick is being pushed side to side or up and down. 
+
+Feel free to try to write the code on your own to detect when the joystick is moved left, right, up, or down.  An easy way is to just use if statement comparing the values of the x and y values read from the joystick.  
+
+If you'd like to see how to code it we have some code below.
 Now let's make more code to further your understanding!
 
 ```python
