@@ -87,6 +87,10 @@ Buzzer lab with PWM.
 Use PWM to control a servo:  
 [Lab 12](/labs/12_servo_control.md) 
 
+## Joystick and Turrets(Optional)
+[Joystick Lab](/labs/Joystick_intro.md)  
+[Turret Lab](/labs/turret.md)
+
 ## Threading in MicroPython
 
 Threading on the Pico:  
