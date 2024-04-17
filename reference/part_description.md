@@ -29,16 +29,18 @@ A potentiometer is another type of variable resistor that allows you to turn a k
 
 ## Buttons
 <kbd><img src="http://github.com/javaplus/PicoProjects/raw/main/images/button.jpg" alt="Buttons" width="120" height="100"></img></kbd>  
-A button is a simple input device that can be used for all types of applications. Through code on the Pico you can detect whether the button is pressed or unpressed.
+A button is a simple input device that can be used for all types of applications. Through code on the Pico you can detect whether the button is pressed or unpressed.  
+**Button Labs**: [Basic Circuit](/labs/05_button_circuit.md) : [Pico Basic](/labs/08_button_control.md) : [Debounce](/labs/09_button_debounce.md)  : [Mini Game](/labs/16_button_led_reaction_time.md)  :  [Interrupt](/labs/10_button_interrupt.md)  
 
 ## Servos
 <kbd><img src="http://github.com/javaplus/PicoProjects/raw/main/images/sg90.png" alt="Servos" width="120" height="100"></img></kbd>   
-Servos are simple motors that allows you to tell it a position to move to and hold. Servos are commonly used in robotics as well as R/C planes and cars. Servos are good at providing simple movement or articulation into your project.
+Servos are simple motors that allows you to tell it a position to move to and hold. Servos are commonly used in robotics as well as R/C planes and cars. Servos are good at providing simple movement or articulation into your project.  
+**Servo Labs**: [Control with Pico](/labs/12_servo_control.md) 
 
 ## Joysticks
 <kbd><img src="https://camo.githubusercontent.com/900edb5945a54ebb2774a1ffae85a3404396f6cf0471a64490d7beae10ff9ec6/68747470733a2f2f6d2e6d656469612d616d617a6f6e2e636f6d2f696d616765732f492f37314b4e68784b624e424c2e5f41435f53583432355f2e6a7067" alt="Joystick" width="100" height="100"></img></kbd>   
 Joysticks are a useful input device to detect movent in at least two directions.  Joysticks are great for controlling direction of servo movement or any kind of proportional movement. 
-
+**Joystick Labs**: [Pico Basic](/labs/Joystick_intro.md)  : [Turret Lab](/labs/turret.md)
 ## Buzzer
 <kbd><img src="http://github.com/javaplus/PicoProjects/raw/main/images/buzzertop.jpg" alt="Buzzer" width="100" height="100"></img></kbd>  
 The buzzer is a simple output device that can make sound.  When used with PWM, you can adjust the frequency or pitch to change the sound that they make.  They are good to add an audio element to your project.  
