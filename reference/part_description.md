@@ -44,10 +44,15 @@ Joysticks are a useful input device to detect movent in at least two directions.
 ## Buzzer
 <kbd><img src="http://github.com/javaplus/PicoProjects/raw/main/images/buzzertop.jpg" alt="Buzzer" width="100" height="100"></img></kbd>  
 The buzzer is a simple output device that can make sound.  When used with PWM, you can adjust the frequency or pitch to change the sound that they make.  They are good to add an audio element to your project.  
+**Buzzer Labs**: [With Pico and PWM](/labs/11b_Buzzer.md)
 
 ## Seven Segment Displays
 <kbd><img src="http://github.com/javaplus/PicoProjects/raw/main/images/tm1637.jpeg" alt="Seven Segment Display" width="150" height="100"></img></kbd>  
-Seven segment displays are great output device to display numbers or values.  Good for showing score, lives left, or any other numeric information.  If you are creative, you can even display some words or letters.
+Seven segment displays are great output device to display numbers or values.  Good for showing score, lives left, or any other numeric information.  If you are creative, you can even display some words or letters.   
+**Seven Segment Display Labs**: [With Pico](/labs/15_seven_segment.md) 
+
+
+
 
 
 
