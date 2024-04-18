@@ -31,6 +31,9 @@ Many of the labs reference specific columns and rows to use when plugging in ele
 
 If you finish a lab quickly and see others that are struggling, **your stretch goal is to help a neighbor!**
 
+## Optional Path
+
+Instead of going sequentially through the labs, you can instead use the [Parts Description](https://github.com/javaplus/PicoProjects/blob/main/reference/part_description.md) page to see a list of all the cool gadgets you can use to build a game and then choose your own adventure.
 
 ## Intro to Circuits.
 
