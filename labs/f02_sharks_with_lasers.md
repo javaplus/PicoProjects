@@ -32,10 +32,10 @@ Now connect the servo's power wire(red middle) to the 5volt rail. Connect the se
 **BEFORE** snapping the servo onto the base, run the following code in the shell of Thonny to allow us to set a "home" for the shark and align the laser.
 
 ```Python
-import sg90
+from sg90 import servo
 
-sg90.servo_pin(15)
-sg90.move_to(90)
+servo1 = servo(15)
+servo.move_to(90)
 
 ```
 
@@ -77,7 +77,8 @@ Once you have the pico wired and the game stage set as seen above, take some tim
 
 from machine import Pin,PWM,ADC
 from math import modf
-import utime, sg90, _thread, tm1637, sys
+import utime, _thread, tm1637, sys
+from sg90 import servo
 
 photoresistor_value = machine.ADC(28)
 
@@ -100,7 +101,7 @@ laser.value(0)
 button = Pin(17, Pin.IN, Pin.PULL_DOWN)
 
 # Initialize Servo
-sg90.servo_pin(15)
+servo1 = servo(15)
 SMOOTH_TIME = 80
 servo_speed = 1
 
@@ -114,27 +115,27 @@ DEBOUNCE_utime = 5000
 # initialize to current utime
 debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
        
-def scan(servo):
+def scan(current_servo):
     stepping = servo_speed
     for i in range(45,130, stepping):
         if (kill_flag):
             break
-        servo.move_to(i)
+        current_servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(130,45, -stepping):
         if (kill_flag):
             break
-        servo.move_to(i)
+        current_servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
         
 # define a function to execute in the second thread
 def second_thread_func():
     while True:
         # fix for import failing in second thread when it's inside a function
-        servo = sg90
+        servo2 = servo1
         stepping = servo_speed
-        scan(servo)
+        scan(servo2)
         #print("servo_speed=", servo_speed)
         utime.sleep_ms(100)
 
