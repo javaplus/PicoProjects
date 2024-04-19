@@ -34,7 +34,8 @@ Helpful hint: Set a baseline photores value to determine if a hit happened or no
 
 from machine import Pin,PWM,ADC
 from math import modf
-import utime, sg90, _thread, tm1637, sys
+import utime, _thread, tm1637, sys
+from sg90 import servo
 
 photoresistor_value = machine.ADC(28)
 
@@ -62,7 +63,7 @@ score = 0
 display.number(score)
 
 # Initialize Servo
-sg90.servo_pin(15)
+servo1 = servo(15)
 SMOOTH_TIME = 80
 servo_speed = 1
 
@@ -86,27 +87,27 @@ print("Initial Laser Voltage Reading: ", initial_photo_reading)
 target_reading = initial_photo_reading * 1.2   # potentially need a different percentage based on laser and photores being used
 print("Target Goal Lighting: ", target_reading)
        
-def scan(servo):
+def scan(current_servo):
     stepping = servo_speed
     for i in range(45,130, stepping):
         if (kill_flag):
             break
-        servo.move_to(i)
+        current_servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(130,45, -stepping):
         if (kill_flag):
             break
-        servo.move_to(i)
+        current_servo.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
         
 # define a function to execute in the second thread
 def second_thread_func():
     while True:
         # fix for import failing in second thread when it's inside a function
-        servo = sg90
+        servo2 = servo1
         stepping = servo_speed
-        scan(servo)
+        scan(servo2)
         #print("servo_speed=", servo_speed)
         utime.sleep_ms(100)
 
