@@ -90,3 +90,8 @@ while True:
 ```
 
   What we're doing here is calling functions in the turret library to make the turrets move.
+
+#### Cool Game for Reference 
+
+Here's a link to a simple game that uses the joystick, turret, laser, and photoresistor.  You use the joystick to move the turret which holds the laser and try to get it to hit the photoresistor.  If the laser hits the photoresistor, then the LED will light up.
+[Game Code](../game/turret_laser_target.py)
