@@ -24,14 +24,15 @@ Once you have the pico wired, we need to write the code to control the servo and
 ```Python
 from machine import Pin,PWM
 import utime
-import sg90
+from sg90 import servo
 
 # Initialize LED
 led = PWM(Pin(16))
 led.freq(500)
 
 # Initiliaze Servo
-sg90.servo_pin(15)
+servo1 = servo(15)
+
 SMOOTH_TIME = 10
 
 def fade_led():
@@ -42,22 +43,22 @@ def fade_led():
             
 def scan():
     for i in range(90,180):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(180,89, -1):
         print(i)
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 
     for i in range(90,-1,-1):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(0,91):
         print(i)
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 
@@ -80,7 +81,7 @@ Here's the code:
 ``` Python
 from machine import Pin,PWM
 import utime
-import sg90
+from sg90 import servo
 import _thread
 
 
@@ -89,7 +90,7 @@ led = PWM(Pin(16))
 led.freq(500)
 
 # Initiliaze Servo
-sg90.servo_pin(15)
+servo1 = servo(15)
 SMOOTH_TIME = 10
 
 def fade_led():
@@ -100,20 +101,20 @@ def fade_led():
         
 def scan():
     for i in range(90,180):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(180,89, -1):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 
     for i in range(90,-1,-1):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(0,91):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 # define a function to execute in the second thread
@@ -151,7 +152,7 @@ Here's the whole code:
 ```Python
 from machine import Pin,PWM
 import utime
-import sg90
+from sg90 import servo
 import _thread
 
 
@@ -160,7 +161,7 @@ led = PWM(Pin(16))
 led.freq(500)
 
 # Initiliaze Servo
-sg90.servo_pin(15)
+servo1 = servo(15)
 SMOOTH_TIME = 20
 servo_speed = 1
 
@@ -173,20 +174,20 @@ def fade_led():
 def scan():
     stepping = servo_speed
     for i in range(90,180, stepping):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(180,89, -stepping):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
 
     for i in range(90,-1,-stepping):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
 
     for i in range(0,91, stepping):
-        sg90.move_to(i)
+        servo1.move_to(i)
         utime.sleep_ms(SMOOTH_TIME)
         
 
