@@ -38,6 +38,7 @@ import utime, _thread, tm1637, sys
 from sg90 import servo
 
 photoresistor_value = machine.ADC(28)
+initial_photo_reading = photoresistor_value.read_u16()
 
 # Initialize LEDs to on at beginning
 # These LEDs indicate lives remaining
@@ -67,6 +68,7 @@ servo1 = servo(15)
 SMOOTH_TIME = 80
 servo_speed = 1
 
+
 buzzer = PWM(Pin(9))
 buzzer.freq(1000)
 
@@ -80,7 +82,6 @@ DEBOUNCE_utime = 5000
 # initialize to current utime
 debounce_counter = utime.ticks_ms() - DEBOUNCE_utime
 
-initial_photo_reading = photoresistor_value.read_u16()
 print("Initial Laser Voltage Reading: ", initial_photo_reading)
 
 # target will recognize a hit when there is a 20% increase in light
